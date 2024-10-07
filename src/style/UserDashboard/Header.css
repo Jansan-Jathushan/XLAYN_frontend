@@ -1,0 +1,14 @@
+/* Adjust the size of the logo */
+.logo-img {
+    width: 150px; /* Adjust this to fit your design */
+  }
+  
+  /* Profile icon styling */
+  .profile-icon {
+    color: #FFC107; /* Gold color for the profile icon */
+  }
+  
+  .profile-icon:hover {
+    opacity: 0.8; /* Slight hover effect */
+  }
+  

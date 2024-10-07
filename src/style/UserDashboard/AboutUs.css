@@ -1,0 +1,81 @@
+/* Custom styles for the About Us page */
+
+/* Container styling */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  /* Hero Section */
+  .position-relative {
+    margin-bottom: 20px;
+  }
+  
+  /* Heading styles */
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Arial', sans-serif; /* Change to your desired font */
+  }
+  
+  /* Card styles */
+  .card {
+    border: none; /* Remove default border */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow effect */
+  }
+  
+  .card-title {
+    font-weight: bold;
+    color: #333; /* Darker title color */
+  }
+  
+  .card-text {
+    color: #555; /* Slightly lighter text color */
+  }
+  
+  /* Team Member Image */
+  .card-img-top {
+    border: 4px solid #007bff; /* Blue border for team member images */
+  }
+  
+  /* Button styles for social media links */
+  .text-primary, .text-info, .text-danger {
+    transition: color 0.3s ease; /* Smooth transition for hover effect */
+  }
+  
+  .text-primary:hover {
+    color: #0056b3; /* Darker blue on hover */
+  }
+  
+  .text-info:hover {
+    color: #0d6efd; /* Darker blue on hover */
+  }
+  
+  .text-danger:hover {
+    color: #c82333; /* Darker red on hover */
+  }
+  
+  /* General spacing */
+  .mb-4 {
+    margin-bottom: 2rem; /* Consistent spacing for sections */
+  }
+  
+  .mt-5 {
+    margin-top: 3rem; /* More spacing for the top of the container */
+  }
+  
+  /* Responsive images */
+  .img-fluid {
+    max-width: 100%;
+    height: auto; /* Keep aspect ratio */
+  }
+  
+  /* Additional media queries for responsiveness */
+  @media (max-width: 768px) {
+    .position-relative h1 {
+      font-size: 2.5rem; /* Adjust font size for smaller screens */
+    }
+  
+    .card {
+      margin-bottom: 20px; /* More space between cards on mobile */
+    }
+  }
+  

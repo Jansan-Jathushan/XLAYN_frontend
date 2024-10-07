@@ -1,0 +1,165 @@
+/* General Layout */
+body, html {
+  margin: 0;
+  padding: 0;
+  font-family: 'Arial', sans-serif;
+  box-sizing: border-box;
+}
+
+h1, h2, h5 {
+  font-weight: bold;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+a {
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Hero Section */
+.bg-dark {
+  background-color: #343a40 !important;
+  color: #fff;
+}
+
+.hero-section h1 {
+  font-size: 2.5rem;
+}
+
+.hero-section .lead {
+  font-size: 1.2rem;
+}
+
+.hero-section .btn {
+  padding: 10px 20px;
+}
+
+/* Product Section */
+.card {
+  border: none;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.card-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+.card-text {
+  color: #6c757d;
+}
+
+.card img {
+  object-fit: cover;
+}
+
+.card-body .btn {
+  padding: 5px 15px;
+}
+
+/* Subscription Section */
+.bg-white {
+  background-color: #fff;
+}
+
+.list-unstyled {
+  padding-left: 0;
+  list-style-type: none;
+}
+
+.lead {
+  font-size: 1.15rem;
+}
+
+/* Why Choose Us Section */
+.text-primary {
+  color: #007bff !important;
+}
+
+.mb-4 {
+  margin-bottom: 1.5rem;
+}
+
+.bi {
+  font-size: 3rem;
+}
+
+.col-md-4 h5 {
+  font-size: 1.2rem;
+}
+
+.col-md-4 p {
+  color: #6c757d;
+}
+
+/* Testimonials Section */
+.card {
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.card-title {
+  font-size: 1.2rem;
+}
+
+.card-subtitle {
+  color: #6c757d;
+}
+
+/* Social Media Section */
+.social-icons a {
+  color: #fff;
+  transition: transform 0.3s;
+}
+
+.social-icons a:hover {
+  transform: scale(1.1);
+}
+
+.social-icons .fa {
+  font-size: 2rem;
+}
+
+/* Footer */
+footer {
+  background-color: #343a40;
+  color: #fff;
+  padding: 20px 0;
+  text-align: center;
+}
+
+footer a {
+  color: #007bff;
+  transition: color 0.3s;
+}
+
+footer a:hover {
+  color: #0056b3;
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+  .hero-section h1 {
+    font-size: 2rem;
+  }
+  
+  .hero-section .lead {
+    font-size: 1rem;
+  }
+
+  .card-body .btn {
+    font-size: 0.875rem;
+  }
+
+  .wholesaler-section .lead {
+    font-size: 1rem;
+  }
+}

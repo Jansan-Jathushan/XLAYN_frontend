@@ -1,0 +1,54 @@
+footer {
+    background-color: #f8f9fa; /* Light background color */
+  }
+  
+  footer .container {
+    max-width: 1200px; /* Max width for the container */
+  }
+  
+  footer h5 {
+    margin-bottom: 1rem; /* Space below headings */
+    font-weight: bold; /* Bold headings */
+  }
+  
+  footer p {
+    margin: 0.5rem 0; /* Space above and below paragraphs */
+  }
+  
+  footer .list-unstyled {
+    padding-left: 0; /* Remove default padding */
+  }
+  
+  footer .list-unstyled li {
+    margin-bottom: 0.5rem; /* Space below list items */
+  }
+  
+  footer .list-unstyled a {
+    text-decoration: none; /* Remove underline from links */
+    color: #333; /* Dark text color */
+    transition: color 0.3s; /* Transition for hover effect */
+  }
+  
+  footer .list-unstyled a:hover {
+    color: #007bff; /* Change color on hover */
+  }
+  
+  .social-icons {
+    margin-top: 1rem; /* Space above social icons */
+  }
+  
+  .social-icons a {
+    color: #333; /* Default icon color */
+    transition: color 0.3s; /* Transition for hover effect */
+  }
+  
+  .social-icons a:hover {
+    color: #007bff; /* Change icon color on hover */
+  }
+  
+  footer .text-center {
+    padding: 1rem; /* Padding for copyright section */
+    font-size: 0.9rem; /* Slightly smaller font size */
+    color: #555; /* Dark gray text color */
+  }
+  
