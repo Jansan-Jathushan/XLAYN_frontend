@@ -49,11 +49,48 @@
 // export default App;
 
 
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
-// import AdminLayout from './components/AdminDashboard/AdminLayout';
+// import { BrowserRouter, Routes, Route } from 'react-router-dom';
+// // import AdminLayout from './components/AdminDashboard/AdminLayout';
+// import AdminMain from './components/AdminDashboard/AdminMain';
+// import UserMain from './components/UserDashboard/UserMain';
+// import SupplierMain from './components/SupplierDashboard/SupplierMain'; // Import SupplierMain
+
+// const App = () => {
+//     const userRole = localStorage.getItem('userRole'); // Retrieve the user role
+//     const isAdmin = userRole === 'admin'; // Check if the role is admin
+//     const isSupplier = userRole === 'supplier'; // Check if the role is supplier
+
+//     return (
+//         <BrowserRouter>
+//             <Routes>
+//             <Route path="/" element={<Home />} />
+
+//                 {/* Admin Routes */}
+//                 {isAdmin && (
+//                     <Route path="/admin/*" element={<AdminMain isAdmin={isAdmin} />} /> // Use the AdminMain component for admin routes
+//                 )}
+
+//                 {/* User Routes */}
+//                 <Route path="/user/*" element={<UserMain />} /> {/* Use the UserMain component for user routes */}
+
+//                 {/* Supplier Routes */}
+//                 {isSupplier && (
+//                     <Route path="/supplier/*" element={<SupplierMain />} /> // Use the SupplierMain component for supplier routes
+//                 )}
+
+//             </Routes>
+//         </BrowserRouter>
+//     );
+// };
+
+// export default App;
+
+import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import AdminMain from './components/AdminDashboard/AdminMain';
 import UserMain from './components/UserDashboard/UserMain';
-import SupplierMain from './components/SupplierDashboard/SupplierMain'; // Import SupplierMain
+import SupplierMain from './components/SupplierDashboard/SupplierMain';
+import HomePage from './/components/UserDashboard/Home.js'; // Import the Home component
+import NavbarMenu from './components/UserDashboard/Header.js';
 
 const App = () => {
     const userRole = localStorage.getItem('userRole'); // Retrieve the user role
@@ -62,21 +99,24 @@ const App = () => {
 
     return (
         <BrowserRouter>
+
             <Routes>
-              
+                {/* Home route */}
+                {/* <Route path="/" element={<HomePage />} /> */}
                 {/* Admin Routes */}
                 {isAdmin && (
                     <Route path="/admin/*" element={<AdminMain isAdmin={isAdmin} />} /> // Use the AdminMain component for admin routes
                 )}
 
                 {/* User Routes */}
-                <Route path="/user/*" element={<UserMain />} /> {/* Use the UserMain component for user routes */}
+                <Route path="/" element={<UserMain />} /> {/* Use the UserMain component for user routes */}
 
                 {/* Supplier Routes */}
                 {isSupplier && (
                     <Route path="/supplier/*" element={<SupplierMain />} /> // Use the SupplierMain component for supplier routes
                 )}
 
+             
             </Routes>
         </BrowserRouter>
     );

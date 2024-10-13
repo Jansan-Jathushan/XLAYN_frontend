@@ -5,7 +5,7 @@ import { faUserCircle } from '@fortawesome/free-solid-svg-icons'; // Import the 
 import 'bootstrap/dist/css/bootstrap.min.css'; // Importing Bootstrap CSS
 import '../../style/UserDashboard/Header.css'; // External CSS for additional custom styling
 
-const Header = () => {
+const NavbarMenu = () => {
   const navigate = useNavigate(); // Use the useNavigate hook
 
   const handleProfileClick = () => {
@@ -72,4 +72,4 @@ const Header = () => {
   );
 };
 
-export default Header;
+export default NavbarMenu;

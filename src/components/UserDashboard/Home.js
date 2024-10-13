@@ -61,39 +61,54 @@ export default function HomePage() {
     // Display a success message (optional)
     alert(`${product.name} has been added to your cart!`);
   };
-
+  
   return (
     <div className="d-flex flex-column min-vh-100">
       <main className="flex-grow-1">
         {/* Hero Section */}
-        <section className="py-5 bg-dark text-light text-center">
-          <div className="container">
-            <h1 className="display-4 font-weight-bold">Premium Dry Fish Delivered Worldwide.</h1>
-            <p className="lead my-4">
-              Elevative Export - Bringing the Finest Dry Fish to Your Table.
-            </p>
-            <p className="my-4">
-              XLAYN connects you with the best dry fish sourced from trusted suppliers, ensuring quality and freshness with every shipment.
-            </p>
-            <div className="d-flex justify-content-center gap-3">
-              <Button variant="light" href="#">
-                Shop Now
-              </Button>
-              <Button variant="outline-light" href="#">
-                Become a Supplier/Wholesaler
-              </Button>
-            </div>
+        <section className="py-5 bg-dark text-primary text-center d-flex align-items-center min-vh-100 ">
+  <div className="container-fluid">
+    <h1 className="display-4 font-weight-bold mb-4 fw-bold">
+      Premium Dry Fish Delivered Worldwide.
+    </h1>
+    <div className="row d-flex align-items-center justify-content-between text-light">
+      
+      <div className="col-md-6">
+        <p className="lead my-4 fs-2">
+          Elevative Export - Bringing the Finest Dry Fish to Your Table.
+        </p>
+        <p className="my-4 fs-4">
+          XLAYN connects you with the best dry fish sourced from trusted suppliers, ensuring quality and freshness with every shipment.
+        </p>
+        <div className="row justify-content-start mt-5">
+          <div className="col-6">
+            <Button variant="light" className="px-4 py-2" href="#">
+              Shop Now
+            </Button>
           </div>
-        </section>
+          <div className="col-6">
+            <Button variant="outline-light" className="text-wrap px-4 py-2" href="#">
+              Become a Supplier/Wholesaler
+            </Button>
+          </div>
+        </div>
+      </div>
+
+      <div className="col-md-6 my-5">
+        <img src="https://i.ibb.co/5WbJQbF/Copy-of-Obito-the-broken-hero.jpg" alt="Side Image" className="img-fluid rounded" />
+      </div>
+    </div>
+  </div>
+</section>
 
         {/* Product Section */}
-        <section className="py-5 bg-light">
+        {/* <section className="py-5 bg-light">
           <div className="container">
             <h2 className="display-5 text-center mb-4">
               Explore Our Premium Dry Fish Collection
             </h2>
             <div className="row">
-              {/* Map over the first 5 products to dynamically generate cards */}
+             
               {products.slice(0, 5).map((product) => (
                 <div key={product._id} className="col-md-4 mb-4">
                   <div className="card h-100">
@@ -112,7 +127,7 @@ export default function HomePage() {
                         <span className="font-weight-bold">${product.price}</span>
                         <Button
                           variant="outline-primary"
-                          onClick={() => addToCart(product)} // Corrected here
+                          onClick={() => addToCart(product)} 
                         >
                           Add to Cart
                         </Button>
@@ -128,10 +143,10 @@ export default function HomePage() {
               </Button>
             </div>
           </div>
-        </section>
+        </section> */}
 
         {/* Wholesaler Subscription Section */}
-        <section className="py-5 bg-white">
+        {/* <section className="py-5 bg-white">
           <div className="container d-flex align-items-center justify-content-between flex-wrap">
             <img
               src="/placeholder.svg"
@@ -163,10 +178,10 @@ export default function HomePage() {
               </Button>
             </div>
           </div>
-        </section>
+        </section> */}
 
         {/* Why Choose Us Section */}
-        <section className="py-5 bg-light">
+        {/* <section className="py-5 bg-light">
           <div className="container text-center">
             <h2 className="display-5 mb-4">Why Choose Us</h2>
             <div className="row">
@@ -199,14 +214,14 @@ export default function HomePage() {
               </div>
             </div>
           </div>
-        </section>
+        </section> */}
 
         {/* Customer Testimonials Section */}
-        <section className="py-5 bg-light">
+        {/* <section className="py-5 bg-light">
           <div className="container">
             <h2 className="display-5 text-center mb-4">What Our Customers Say</h2>
             <div className="row">
-              {/* Map over first 5 testimonials */}
+              
               {testimonials.map((testimonial) => (
                 <div key={testimonial._id} className="col-md-4 mb-4">
                   <div className="card h-100">
@@ -222,10 +237,10 @@ export default function HomePage() {
               ))}
             </div>
           </div>
-        </section>
+        </section> */}
 
         {/* Social Media Section */}
-        <section className="py-5 bg-dark text-light text-center">
+        {/* <section className="py-5 bg-dark text-light text-center">
           <div className="container">
             <h2 className="mb-4">Follow Us</h2>
             <div className="d-flex justify-content-center gap-4">
@@ -243,7 +258,7 @@ export default function HomePage() {
               </a>
             </div>
           </div>
-        </section>
+        </section> */}
       </main>
     </div>
   );

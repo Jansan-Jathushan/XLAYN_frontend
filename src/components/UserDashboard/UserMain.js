@@ -1,22 +1,17 @@
 import React from 'react';
-import { Routes, Route } from 'react-router-dom';
-import Header from './Header.js';
+import { Routes, Route, Router } from 'react-router-dom';
 import Footer from './Footer.js';
 import HomePage from './Home.js';
 import AboutUs from './AboutUs.js';
 import SignInUpForm from './SignInUpForm.js';
-import RegisterForm from './RegisterRequest.js'
-// import ContactUs from './Contact.js';
-// import Products from './Products.js';
-// import UserProfile from './UserProfile.js';
-// import WholesalerProfile from './WholesalerProfile.js';
-// UserDashboardRoutes.js
-
+import RegisterForm from './RegisterRequest.js';
+import NavbarMenu from './Header.js';
 
 const UserDashboardRoutes = () => {
   return (
     <>
-      <Header /> {/* Header appears on every page */}
+      {/* Ensure NavbarMenu is rendering at the top */}
+      <NavbarMenu /> 
       
       <main>
         <Routes>
@@ -27,7 +22,7 @@ const UserDashboardRoutes = () => {
         </Routes>
       </main>
       
-      <Footer /> {/* Footer appears on every page */}
+      <Footer /> 
     </>
   );
 };
