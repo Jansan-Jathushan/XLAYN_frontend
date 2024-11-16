@@ -1,54 +1,184 @@
-footer {
-    background-color: #f8f9fa; /* Light background color */
+/* footer {
+  background-color: #f8f9fa;
+  padding: 40px 0;
+  border-top: 1px solid #ddd;
+  position: relative;
+  bottom: 0;
+  width: 100%;
+}
+
+footer .row {
+  margin: 0;
+  padding: 0;
+}
+
+footer h5 {
+  font-weight: 600;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+footer p {
+  color: #555;
+  line-height: 1.8;
+  font-size: 14px;
+}
+
+footer .list-unstyled {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+footer .list-unstyled li {
+  margin-bottom: 10px;
+}
+
+footer .list-unstyled a {
+  color: #333;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+footer .list-unstyled a:hover {
+  color: #007bff;
+}
+
+footer .social-icons {
+  margin-top: 30px;
+}
+
+footer .social-icons a {
+  color: #333;
+  margin-right: 15px;
+  transition: color 0.3s ease;
+}
+
+footer .social-icons a:hover {
+  color: #007bff;
+}
+
+footer .text-center {
+  background-color: #e9ecef;
+  padding: 20px 0;
+  color: #555;
+  font-size: 14px;
+}
+
+@media (max-width: 768px) {
+  footer .col-lg-6, footer .col-lg-3 {
+    text-align: center;
+    margin-bottom: 30px;
   }
-  
-  footer .container {
-    max-width: 1200px; /* Max width for the container */
+
+  footer .social-icons {
+    text-align: center;
   }
-  
-  footer h5 {
-    margin-bottom: 1rem; /* Space below headings */
-    font-weight: bold; /* Bold headings */
+} */
+
+
+/* Footer Container */
+.footer-container {
+  width: 100%;
+  background-color: #131842;
+  color: #ECCEAE;
+  padding: 3rem 1rem;
+}
+
+.footer-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+/* Grid Layout */
+.grid-container {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+}
+
+@media (min-width: 768px) {
+  .grid-container {
+    grid-template-columns: repeat(2, 1fr);
   }
-  
-  footer p {
-    margin: 0.5rem 0; /* Space above and below paragraphs */
+}
+
+@media (min-width: 1024px) {
+  .grid-container {
+    grid-template-columns: repeat(4, 1fr);
   }
-  
-  footer .list-unstyled {
-    padding-left: 0; /* Remove default padding */
-  }
-  
-  footer .list-unstyled li {
-    margin-bottom: 0.5rem; /* Space below list items */
-  }
-  
-  footer .list-unstyled a {
-    text-decoration: none; /* Remove underline from links */
-    color: #333; /* Dark text color */
-    transition: color 0.3s; /* Transition for hover effect */
-  }
-  
-  footer .list-unstyled a:hover {
-    color: #007bff; /* Change color on hover */
-  }
-  
-  .social-icons {
-    margin-top: 1rem; /* Space above social icons */
-  }
-  
-  .social-icons a {
-    color: #333; /* Default icon color */
-    transition: color 0.3s; /* Transition for hover effect */
-  }
-  
-  .social-icons a:hover {
-    color: #007bff; /* Change icon color on hover */
-  }
-  
-  footer .text-center {
-    padding: 1rem; /* Padding for copyright section */
-    font-size: 0.9rem; /* Slightly smaller font size */
-    color: #555; /* Dark gray text color */
-  }
-  
+}
+
+/* Section Styles */
+.company-info, .contact-info, .quick-links, .resources {
+  margin-bottom: 2rem;
+}
+
+.company-info .logo {
+  height: 2rem;
+}
+
+.company-description {
+  font-size: 0.875rem;
+  line-height: 1.5;
+}
+
+.social-links {
+  display: flex;
+  gap: 1rem;
+}
+
+.social-link .social-icon {
+  width: 1.25rem;
+  height: 1.25rem;
+}
+
+.section-title {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: #E68369;
+  margin-bottom: 1rem;
+}
+
+.contact-details p, .link-list a {
+  font-size: 0.875rem;
+}
+
+/* Links */
+.link-list a {
+  display: block;
+  color: #ECCEAE;
+  text-decoration: none;
+  padding: 0.25rem 0;
+}
+
+.link-list a:hover {
+  color: #E68369;
+}
+
+.link-item {
+  font-size: 0.875rem;
+}
+
+.social-link:hover .social-icon {
+  color: #E68369;
+}
+
+
+
+/* Footer Bottom */
+.footer-bottom {
+  margin-top: 2rem;
+  border-top: 1px solid #4E4E4E;
+  padding-top: 1rem;
+  text-align: center;
+}
+
+.footer-bottom p {
+  font-size: 0.875rem;
+}
+
+.highlight-text {
+  color: #E68369;
+}

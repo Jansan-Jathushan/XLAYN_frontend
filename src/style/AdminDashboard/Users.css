@@ -1,0 +1,42 @@
+.table.modern-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1rem;
+}
+
+.table.modern-table th, .table.modern-table td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+.table.modern-table th {
+    background-color: #f4f4f4;
+    font-weight: bold;
+}
+
+.table.modern-table tr:hover {
+    background-color: #f9f9f9;
+}
+
+.table.modern-table .form-control {
+    min-width: 100px;
+}
+
+.btn {
+    padding: 6px 12px;
+    font-size: 14px;
+    border-radius: 4px;
+}
+
+.btn-primary {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+}
+
+.btn-danger {
+    background-color: #dc3545;
+    color: #fff;
+    border: none;
+}

@@ -1,14 +1,114 @@
-/* Adjust the size of the logo */
+
+
+
+
+
+
+
+
+
+/* Set the background color for the navbar */
+.navbar {
+  background-color: #131842;
+  height: 5rem;
+  position: sticky;
+  top: 20x;
+  z-index: 1000; /* Ensures the navbar stays above other content */
+  
+}
+
+/* Navbar container with a fixed 90% width */
+.navbar-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 90%;
+  margin: 0 auto; /* Center the navbar in the container */
+}
+
+/* Logo container */
+.logo-container {
+  display: flex;
+  align-items: center;
+}
+
+/* Styling for the logo */
 .logo-img {
-    width: 150px; /* Adjust this to fit your design */
-  }
-  
-  /* Profile icon styling */
-  .profile-icon {
-    color: #FFC107; /* Gold color for the profile icon */
-  }
-  
-  .profile-icon:hover {
-    opacity: 0.8; /* Slight hover effect */
-  }
-  
+  width: 120px;
+  height: auto;
+}
+
+/* Navbar Links container, centered */
+.nav-links-container {
+  flex-grow: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.navbar-nav {
+  display: flex;
+  list-style: none;
+  padding-left: 0;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 25px;
+  font-weight: 200;
+  font-style: oblique;
+}
+
+.nav-item {
+  margin: 0 15px;
+}
+
+.nav-link {
+  color: #E68369 !important;
+  padding: 10px 20px;
+}
+
+.nav-link:hover {
+  color: #ECCEAE !important;
+}
+
+/* Buttons and Profile Icon Container */
+.buttons-container {
+  display: flex;
+  align-items: center;
+}
+
+/* Button styling for Sign In/Sign Up and Sign Out */
+.btn-signinup {
+  background-color: #E68369;
+  color: white;
+  margin-left: 15px;
+  border-radius: 15px;
+
+}
+
+.btn-signinup:hover {
+  background-color: #ECCEAE;
+  color: #131842;
+}
+
+/* Button for Sign Out */
+.btn-signout {
+  background-color: #E68369;
+  color: white;
+  /* margin-left: 15px; */
+  border-radius: 20px;
+}
+
+.btn-signout:hover {
+  background-color: #ECCEAE;
+  color: #131842;
+}
+
+/* Profile icon styling */
+.profile-icon {
+  cursor: pointer;
+  color: #E68369;
+  margin-left: 15px;
+}
+
+.profile-icon:hover {
+  color: #ECCEAE;
+}

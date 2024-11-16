@@ -1,199 +1,157 @@
-import React from "react";
-import 'bootstrap/dist/css/bootstrap.min.css';
-import '../../style/UserDashboard/AboutUs.css'
-import { Facebook, Instagram, Linkedin, Twitter } from "lucide-react";
-
+import React, { useState, useEffect } from 'react';
+import { Container, Row, Col } from 'react-bootstrap';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faFacebook, faTwitter, faInstagram, faLinkedin } from '@fortawesome/free-brands-svg-icons';
+import { faFish, faShip, faHandshake } from '@fortawesome/free-solid-svg-icons';
+import { motion } from 'framer-motion';
+import Testimonials from './Testimonials';
 export default function AboutUs() {
+  const [currentSlide, setCurrentSlide] = useState(0);
+  const slides = [
+    "https://i.ibb.co/71YL6HQ/dry-fis.jpg",
+    "https://i.ibb.co/68C9dpD/dryfis2.jpg",
+    "https://i.ibb.co/Yt87rsg/dryfish3.png"
+  ];
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentSlide((prevSlide) => (prevSlide + 1) % slides.length);
+    }, 5000);
+    return () => clearInterval(timer);
+  }, []);
+
   return (
-    <div className="container mt-5">
+    <div className="bg-light">
       {/* Hero Section */}
-      <section className="position-relative mb-4">
-        <img
-          src="/placeholder.svg?height=400&width=1200"
-          alt="XLAYN Dry Fish"
-          className="img-fluid rounded"
-          style={{ height: "400px", width: "100%", objectFit: "cover" }}
-        />
-        <div className="position-absolute top-0 start-0 w-100 h-100 bg-black bg-opacity-50 d-flex align-items-center justify-content-center">
-          <h1 className="text-white display-4">About XLAYN</h1>
-        </div>
-      </section>
-
-      {/* Intro Section */}
-      <section className="mb-4">
-        <h2 className="h3 mb-3">About XLAYN</h2>
-        <p className="lead">
-          XLAYN is a pioneering platform dedicated to exporting high-quality dry fish globally. We bridge the gap between
-          trusted suppliers and discerning customers, ensuring the finest products reach your table.
-        </p>
-      </section>
-
-      {/* Mission and Vision */}
-      <section className="mb-4">
-        <div className="row">
-          <div className="col-md-6 mb-4">
-            <div className="card">
-              <div className="card-header">
-                <h5 className="card-title">Our Mission</h5>
-              </div>
-              <div className="card-body">
-                <p className="card-text">
-                  Our mission is to provide the best quality dry fish to customers worldwide, ensuring sustainability and
-                  exceptional service in every transaction.
-                </p>
-              </div>
-            </div>
-          </div>
-          <div className="col-md-6 mb-4">
-            <div className="card">
-              <div className="card-header">
-                <h5 className="card-title">Our Vision</h5>
-              </div>
-              <div className="card-body">
-                <p className="card-text">
-                  We envision a future where every household can access premium dry fish products, supporting local suppliers
-                  and promoting sustainable fishing practices.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* History/Story */}
-      <section className="mb-4">
-        <h2 className="h3 mb-3">Our Story</h2>
-        <div className="row align-items-center">
-          <div className="col-md-6 mb-4">
-            <h3 className="h4">Company Origin</h3>
-            <p>
-              Founded in [Year] by [Your Name/Founders' Names], XLAYN was born out of a passion for high-quality seafood and
-              a desire to connect local suppliers with international markets. Inspired by [Personal Story or Experience], we
-              embarked on this journey to offer customers the best dry fish products.
-            </p>
-            <h3 className="h4">Growth Journey</h3>
-            <p>
-              Since our inception, we have [mention any significant milestones, such as expanding your supplier network,
-              entering new markets, or any awards/recognitions]. Our commitment to quality and service has fueled our growth
-              and success.
-            </p>
-          </div>
-          <div className="col-md-6">
+      <section className="hero-image">
+        {slides.map((slide, index) => (
+          <div key={index} className={`hero-overlay ${index === currentSlide ? 'd-block' : 'd-none'}`}>
             <img
-              src="/placeholder.svg?height=300&width=400"
-              alt="XLAYN History"
-              className="img-fluid rounded"
-              style={{ height: "300px", width: "100%", objectFit: "cover" }}
+              src={slide}
+              alt={`Slide ${index + 1}`}
+              className="w-100 h-100 object-cover hero-image-filter"
             />
           </div>
-        </div>
+        ))}
+        <Container className="h-100 d-flex align-items-center justify-content-center text-center text-dark">
+          <motion.div
+            initial={{ opacity: 0, y: -50 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1 }}
+            className="hero-text"
+          >
+            <h1 className="display-4 font-weight-bold mb-4">About XLAYN</h1>
+            <p className="lead">Bringing the Ocean's Finest to Your Table</p>
+          </motion.div>
+        </Container>
       </section>
 
-      {/* Team */}
-      <section className="mb-4">
-        <h2 className="h3 mb-3">Meet the Team</h2>
-        <div className="row">
+      <Container className="py-5">
+        {/* Our Story */}
+        <Row className="mb-5 align-items-center">
+          <Col md={6}>
+            <motion.div
+              initial={{ opacity: 0, y: 50 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
+            >
+              <h2 className="font-weight-bold mb-4">Our Story</h2>
+              <p className="lead">
+                Founded in 2020, XLAYN was born from a passion for high-quality seafood and a desire to connect local suppliers with international markets.
+              </p>
+              <p className="lead">
+                We embarked on this journey to offer customers the best dry fish products while supporting sustainable fishing practices.
+              </p>
+            </motion.div>
+          </Col>
+          <Col md={6}>
+            <div className="position-relative">
+              <img src="https://i.ibb.co/5WbJQbF/Copy-of-Obito-the-broken-hero.jpg" alt="Journey" className="img-fluid rounded shadow-lg" />
+            </div>
+          </Col>
+        </Row>
+
+        {/* Mission and Vision */}
+        <Row className="mb-5 align-items-center">
+          <Col md={6}>
+            <div className="position-relative">
+              <img src="https://i.ibb.co/5WbJQbF/Copy-of-Obito-the-broken-hero.jpg" alt="Mission & Vision" className="img-fluid rounded shadow-lg" />
+            </div>
+          </Col>
+          <Col md={6}>
+            <motion.div
+              initial={{ opacity: 0, y: 50 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
+            >
+              <h2 className="font-weight-bold mb-4">Mission & Vision</h2>
+              <h3 className="h5 font-weight-bold">Mission</h3>
+              <p className="lead">Providing top-quality dry fish, ensuring sustainability and excellence in every transaction.</p>
+              <h3 className="h5 font-weight-bold mt-4">Vision</h3>
+              <p className="lead">Envisioning a future where every household enjoys premium dry fish while supporting local communities.</p>
+            </motion.div>
+          </Col>
+        </Row>
+
+        {/* Values */}
+        <h2 className="text-center font-weight-bold mb-5">Our Values</h2>
+        <Row className="justify-content-center text-center">
           {[
-            { name: "John Doe", role: "Founder & CEO", bio: "With over 15 years of experience in the seafood industry, John is passionate about quality and sustainability." },
-            { name: "Jane Smith", role: "Operations Manager", bio: "Focused on ensuring seamless operations, Jane manages our supplier relationships and product quality assurance." },
-            { name: "Mike Johnson", role: "Marketing Director", bio: "Mike brings creative strategies to showcase our products and connect with customers worldwide." }
+  { icon: faFish, title: "Quality", description: "We source only the best products." },
+  { icon: faShip, title: "Sustainability", description: "Committed to responsible fishing." },
+  { icon: faHandshake, title: "Customer Satisfaction", description: "Excellence in service." }
+].map((value, index) => (
+  <Col key={index} sm={6} md={4} className="mb-4">
+    <motion.div
+      whileHover={{ y: -10 }}
+      style={{ backgroundColor: "#131842", color: "#FBF6E2" }} // Background and text color
+      className="card p-4 shadow"
+    >
+      <FontAwesomeIcon icon={value.icon} size="3x" className="mb-3" style={{ color: "#ECCEAE" }} />
+      <h4 className="font-weight-bold mb-2">{value.title}</h4>
+      <p>{value.description}</p>
+    </motion.div>
+  </Col>
+))}
+
+
+        </Row>
+
+        {/* Team */}
+        <h2 className="text-center font-weight-bold mb-5">Meet Our Team</h2>
+        <Row>
+          {[
+            { name: "John Doe", role: "Founder & CEO", image: "/placeholder.svg?height=300&width=300&text=John+Doe" },
+            { name: "Jane Smith", role: "Operations Manager", image: "/placeholder.svg?height=300&width=300&text=Jane+Smith" },
+            { name: "Mike Johnson", role: "Marketing Director", image: "/placeholder.svg?height=300&width=300&text=Mike+Johnson" }
           ].map((member, index) => (
-            <div key={index} className="col-md-4 mb-4">
-              <div className="card">
-                <img
-                  src={`/placeholder.svg?height=200&width=200&text=${member.name}`}
-                  alt={member.name}
-                  className="card-img-top rounded-circle mx-auto"
-                  style={{ width: "200px", height: "200px", objectFit: "cover" }}
-                />
-                <div className="card-body text-center">
-                  <h5 className="card-title">{member.name}</h5>
-                  <h6 className="card-subtitle mb-2 text-muted">{member.role}</h6>
-                  <p className="card-text">{member.bio}</p>
+            <Col key={index} md={4} className="mb-4">
+              <motion.div className="team-member shadow-lg" whileHover={{ scale: 1.05 }}>
+                <img src={member.image} alt={member.name} className="w-100 rounded" />
+                <div className="p-4 text-center">
+                  <h4 className="font-weight-bold">{member.name}</h4>
+                  <p className="text-muted">{member.role}</p>
                 </div>
-              </div>
-            </div>
+              </motion.div>
+            </Col>
           ))}
-        </div>
-      </section>
+        </Row>
+        <Testimonials />
 
-      {/* Values */}
-      <section className="mb-4">
-        <h2 className="h3 mb-3">Our Values</h2>
-        <div className="row">
-          {[
-            { value: "Quality", description: "We source only the best products to ensure customer satisfaction." },
-            { value: "Sustainability", description: "Committed to responsible fishing practices that protect marine life." },
-            { value: "Customer Satisfaction", description: "We prioritize our customers' needs, striving for excellence in service." }
-          ].map((item, index) => (
-            <div key={index} className="col-md-4 mb-4">
-              <div className="card">
-                <div className="card-header">
-                  <h5 className="card-title text-center">{item.value}</h5>
-                </div>
-                <div className="card-body">
-                  <p className="card-text text-center">{item.description}</p>
-                </div>
-              </div>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      {/* Partnerships */}
-      <section className="mb-4">
-        <h2 className="h3 mb-3">Our Partnerships</h2>
-        <p className="mb-3">
-          We collaborate with trusted suppliers who share our commitment to quality and sustainability, ensuring that our
-          customers receive the best products available.
-        </p>
-        <p className="mb-4">XLAYN is proud to partner with [mention any notable businesses or organizations], further enhancing our product offerings.</p>
-        <div className="d-flex justify-content-center flex-wrap">
-          {[1, 2, 3, 4].map((partner) => (
-            <img
-              key={partner}
-              src={`/placeholder.svg?height=100&width=100&text=Partner ${partner}`}
-              alt={`Partner ${partner}`}
-              className="img-fluid rounded m-2"
-              style={{ height: "100px", width: "100px", objectFit: "cover" }}
-            />
-          ))}
-        </div>
-      </section>
-
-      {/* Contact Info */}
-      <section className="mb-4">
-        <h2 className="h3 mb-3">Get in Touch</h2>
-        <p className="mb-3">We'd love to hear from you! For inquiries or more information, please contact us at:</p>
-        <div className="row align-items-center">
-          <div className="col-md-6">
-            <p>Email: your-email@xlayn.com</p>
-            <p>Phone: Your Phone Number</p>
-            <div className="d-flex mt-3">
-              <a href="#" className="text-primary me-3">
-                <Facebook className="h6 w-6" />
-              </a>
-              <a href="#" className="text-info me-3">
-                <Twitter className="h6 w-6" />
-              </a>
-              <a href="#" className="text-danger me-3">
-                <Instagram className="h6 w-6" />
-              </a>
-              <a href="#" className="text-primary">
-                <Linkedin className="h6 w-6" />
-              </a>
-            </div>
+        {/* Contact */}
+        <motion.section className="text-center mt-5">
+          <h2 className="font-weight-bold mb-4">Get in Touch</h2>
+          <p className="lead">We'd love to hear from you! Reach out for any inquiries.</p>
+          <p>Email: contact@xlayn.com | Phone: +1 (555) 123-4567</p>
+          <div className="social-icons mt-4">
+            {[faFacebook, faTwitter, faInstagram, faLinkedin].map((icon, index) => (
+              <motion.a key={index} href="#" className="mx-2" whileHover={{ scale: 1.1 }}>
+                <FontAwesomeIcon icon={icon} size="2x" />
+              </motion.a>
+            ))}
           </div>
-          <div className="col-md-6">
-            <img
-              src="/placeholder.svg?height=300&width=400&text=Contact Us"
-              alt="Contact XLAYN"
-              className="img-fluid rounded"
-              style={{ height: "300px", width: "100%", objectFit: "cover" }}
-            />
-          </div>
-        </div>
-      </section>
+        </motion.section>
+      </Container>
     </div>
   );
 }

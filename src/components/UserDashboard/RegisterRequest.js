@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import '../.././style/Request/RegisterRequest.css'; 
+import '../../style/UserDashboard/RegisterRequest.css'; 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEye, faEyeSlash } from '@fortawesome/free-solid-svg-icons';
 
@@ -66,7 +66,7 @@ const RegisterForm = () => {
         formData.append(key, supplierDetails[key]);
       });
 
-      const response = await axios.post('http://localhost:5000/api/register-request/register-wholesaler', formData, {
+      const response = await axios.post('http://localhost:5000/api/register-request/register-supplier', formData, {
         headers: { 'Content-Type': 'multipart/form-data' }
       });
       alert(response.data.message);
@@ -94,10 +94,10 @@ const RegisterForm = () => {
   };
 
   return (
-    <div className={`container ${isRightPanelActive ? 'right-panel-active' : ''}`} id="container">
+    <div className={`register-request-container ${isRightPanelActive ? 'register-request-right-panel-active' : ''}`} id="register-request-container">
       {/* Supplier Registration */}
       {isRightPanelActive ? (
-        <div className="form-container sign-up-container">
+        <div className="register-request-supplier-form-container sign-up-container">
           <form onSubmit={handleSupplierSubmit}>
             <h1>Register as Supplier</h1>
             <span>Use your business details to register</span><br />
@@ -111,7 +111,7 @@ const RegisterForm = () => {
             <input type="text" placeholder="Bank Account Information (Business Name)" name="bankAccountInfo" value={supplierDetails.bankAccountInfo} onChange={handleSupplierInputChange} /><br />
             <input type="email" placeholder="Email" name="email" value={supplierDetails.email} onChange={handleSupplierInputChange} /><br />
             <div className="position-relative">
-              <input type={showPassword ? 'text' : 'password'} placeholder="Password" name="password" value={supplierDetails.password} onChange={handleSupplierInputChange} id="password" />
+              <input type={showPassword ? 'text' : 'password'} placeholder="Password" name="password" value={supplierDetails.password} onChange={handleSupplierInputChange} id="supplier-password" />
               <span className="password-icon" onClick={togglePasswordVisibility}>
                 <FontAwesomeIcon icon={showPassword ? faEyeSlash : faEye} />
               </span>
@@ -122,7 +122,7 @@ const RegisterForm = () => {
         </div>
       ) : (
         // Wholesaler Registration
-        <div className="form-container sign-in-container">
+        <div className="register-request-wholesaler-form-container sign-in-container">
           <form onSubmit={handleWholesalerSubmit}>
             <h1>Register as Wholesaler</h1>
             <span>Use your business details to register</span><br />
@@ -136,7 +136,7 @@ const RegisterForm = () => {
             <input type="text" placeholder="Bank Account Information (Business Name)" name="bankAccountInfo" value={wholesalerDetails.bankAccountInfo} onChange={handleWholesalerInputChange} /><br />
             <input type="email" placeholder="Email" name="email" value={wholesalerDetails.email} onChange={handleWholesalerInputChange} /><br />
             <div className="position-relative">
-              <input type={showPassword ? 'text' : 'password'} name="password" value={wholesalerDetails.password} onChange={handleWholesalerInputChange} id="signin-password" placeholder="Password" />
+              <input type={showPassword ? 'text' : 'password'} name="password" value={wholesalerDetails.password} onChange={handleWholesalerInputChange} id="wholesaler-password" placeholder="Password" />
               <span className="password-icon" onClick={togglePasswordVisibility}>
                 <FontAwesomeIcon icon={showPassword ? faEyeSlash : faEye} />
               </span>
@@ -146,19 +146,19 @@ const RegisterForm = () => {
           </form>
         </div>
       )}
-      
+  
       {/* Overlay */}
-      <div className="overlay-container">
+      <div className="register-request-overlay-container">
         <div className="overlay">
           <div className="overlay-panel overlay-left">
             <h1>Already Registered?</h1>
             <p>If you have already registered as a Supplier, sign in here.</p>
-            <button className="ghost" id="signIn" onClick={handlePanelSwitch}>Register as Wholesaler</button>
+            <button className="ghost" id="signIn" onClick={handlePanelSwitch}>Register as Supplier</button>
           </div>
           <div className="overlay-panel overlay-right">
             <h1>First Time Here?</h1>
             <p>If you haven't registered as a Wholesaler, sign up here.</p>
-            <button className="ghost" id="signUp" onClick={handlePanelSwitch}>Register as Supplier</button>
+            <button className="ghost" id="signUp" onClick={handlePanelSwitch}>Register as Wholesaler</button>
           </div>
         </div>
       </div>

@@ -1,165 +1,95 @@
-/* General Layout */
-body, html {
-  margin: 0;
-  padding: 0;
-  font-family: 'Arial', sans-serif;
-  box-sizing: border-box;
+.hero-section {
+  position: relative; /* Make the section relative for positioning children */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  padding: 0 50px; /* Optional padding for better spacing */
 }
 
-h1, h2, h5 {
+.hero-section .background-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 200%;
+  height: 100%;
+  background: url('https://i.ibb.co/fH8GR9G/back-ground.webp') no-repeat center center/cover; /* Background image */
+  filter: blur(10px);
+  animation: moveBackground 15s linear infinite; /* Animation for background */
+  z-index: 1; /* Set background image below content */
+}
+
+@keyframes moveBackground {
+  0% {
+      transform: translateX(0);
+  }
+  100% {
+      transform: translateX(-50%);
+  }
+}
+
+.hero-section .content {
+  position: relative;
+  z-index: 10; /* Make sure the content is above the background */
+  text-align: left;
+  max-width: 50%; /* Ensures the content does not take up more than half the space */
+  display: flex;
+  flex-direction: column; /* Stacks elements vertically */
+  justify-content: center; /* Centers content vertically */
+  align-items: flex-start; /* Aligns text to the left */
+  height: 100%; /* Ensures full height for centering */
+  padding-left: 100px;
+}
+
+.hero-section .image-container {
+  max-width: 50%; /* Ensures the image does not take up more than half the space */
+  overflow: hidden; /* Prevents overflow if the image is too large */
+  display: flex;
+  justify-content: center; /* Centers the image horizontally */
+  align-items: center; /* Centers the image vertically */
+  height: 120%; /* Ensures full height for centering */
+  z-index: 10;
+  padding-right: 80px;
+}
+
+.hero-section .right-image {
+  width: 150%; /* Makes the image responsive, can adjust percentage as needed */
+  height: 70%; /* Maintains aspect ratio */
+}
+
+.hero-section h3 {
+  font-size: 22px; /* Increased text size */
   font-weight: bold;
-}
-
-.container {
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-a {
-  text-decoration: none;
-}
-
-img {
-  max-width: 100%;
-  height: auto;
-}
-
-/* Hero Section */
-.bg-dark {
-  background-color: #343a40 !important;
-  color: #fff;
+  color: yellow;
 }
 
 .hero-section h1 {
-  font-size: 2.5rem;
+  font-size: 72px; /* Increased text size */
+  line-height: 1.2;
 }
 
-.hero-section .lead {
-  font-size: 1.2rem;
+.hero-section .highlight {
+  color: #e53935;
 }
 
-.hero-section .btn {
+.hero-section p {
+  margin-top: 10px;
+  font-size: 20px; /* Increased text size */
+  color: #aaa;
+}
+
+.hero-section .order-button {
+  margin-top: 20px;
   padding: 10px 20px;
+  background-color: #e53935;
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 5px;
 }
 
-/* Product Section */
-.card {
-  border: none;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-.card-title {
-  font-size: 1.25rem;
-  font-weight: 600;
-}
-
-.card-text {
-  color: #6c757d;
-}
-
-.card img {
-  object-fit: cover;
-}
-
-.card-body .btn {
-  padding: 5px 15px;
-}
-
-/* Subscription Section */
-.bg-white {
-  background-color: #fff;
-}
-
-.list-unstyled {
-  padding-left: 0;
-  list-style-type: none;
-}
-
-.lead {
-  font-size: 1.15rem;
-}
-
-/* Why Choose Us Section */
-.text-primary {
-  color: #007bff !important;
-}
-
-.mb-4 {
-  margin-bottom: 1.5rem;
-}
-
-.bi {
-  font-size: 3rem;
-}
-
-.col-md-4 h5 {
-  font-size: 1.2rem;
-}
-
-.col-md-4 p {
-  color: #6c757d;
-}
-
-/* Testimonials Section */
-.card {
-  border-radius: 0.5rem;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-.card-title {
-  font-size: 1.2rem;
-}
-
-.card-subtitle {
-  color: #6c757d;
-}
-
-/* Social Media Section */
-.social-icons a {
-  color: #fff;
-  transition: transform 0.3s;
-}
-
-.social-icons a:hover {
-  transform: scale(1.1);
-}
-
-.social-icons .fa {
-  font-size: 2rem;
-}
-
-/* Footer */
-footer {
-  background-color: #343a40;
-  color: #fff;
-  padding: 20px 0;
-  text-align: center;
-}
-
-footer a {
-  color: #007bff;
-  transition: color 0.3s;
-}
-
-footer a:hover {
-  color: #0056b3;
-}
-
-/* Media Queries */
-@media (max-width: 768px) {
-  .hero-section h1 {
-    font-size: 2rem;
-  }
-  
-  .hero-section .lead {
-    font-size: 1rem;
-  }
-
-  .card-body .btn {
-    font-size: 0.875rem;
-  }
-
-  .wholesaler-section .lead {
-    font-size: 1rem;
-  }
+.hero-section .order-button:hover {
+  background-color: #d32f2f;
 }
