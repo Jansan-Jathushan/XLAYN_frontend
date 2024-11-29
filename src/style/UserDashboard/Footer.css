@@ -86,9 +86,10 @@ footer .text-center {
 }
 
 .footer-content {
-  max-width: 1200px;
+  max-width: 80%;
   margin: 0 auto;
   padding: 0 2rem;
+ 
 }
 
 /* Grid Layout */
@@ -116,7 +117,8 @@ footer .text-center {
 }
 
 .company-info .logo {
-  height: 2rem;
+  height: 7rem;
+  width: 7rem;
 }
 
 .company-description {
@@ -135,14 +137,14 @@ footer .text-center {
 }
 
 .section-title {
-  font-size: 1.125rem;
-  font-weight: 600;
+  font-size: 1rem;
+  font-weight: 400;
   color: #E68369;
   margin-bottom: 1rem;
 }
 
-.contact-details p, .link-list a {
-  font-size: 0.875rem;
+.contact-details p .link-list a {
+  font-size: 0.5rem;
 }
 
 /* Links */

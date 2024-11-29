@@ -157,12 +157,19 @@
 
 // export default Footer;
 
-
-
-import { Facebook, Instagram, Linkedin, Twitter } from "lucide-react";
+import React from 'react';
+import { Facebook, Instagram, Linkedin, Twitter } from 'lucide-react';
 import '../../style/UserDashboard/Footer.css';
 
 export default function Footer() {
+  const styles = {
+    fontSize: {
+      small: '1.3rem',
+      medium: '3rem',
+      large: '2rem'
+    }
+  };
+
   return (
     <footer className="footer-container">
       <div className="footer-content">
@@ -170,9 +177,9 @@ export default function Footer() {
           {/* Company Info */}
           <div className="company-info">
             <a href="/" className="logo-link">
-              <img src="/xlayn-logo.png" alt="XLAYN" className="logo" />
+              <img src="https://i.ibb.co/8mN47F7/XLAYN-1.png" alt="XLAYN" className="logo" />
             </a>
-            <p className="company-description">
+            <p className="company-description" style={{ fontSize: styles.fontSize.small }}>
               Streamlining the export and purchase of premium-quality dry fish with reliable quality, efficient logistics,
               and sustainable practices.
             </p>
@@ -198,8 +205,8 @@ export default function Footer() {
 
           {/* Contact Info */}
           <div className="contact-info">
-            <h3 className="section-title">CONTACT US</h3>
-            <div className="contact-details">
+            <h3 className="section-title" style={{ fontSize: styles.fontSize.large }}>CONTACT US</h3>
+            <div className="contact-details" style={{ fontSize: styles.fontSize.small }}>
               <p>Headquarters: 123 Export Drive,</p>
               <p>Harbor Town, Miami, FL 33101, USA</p>
               <p>Phone: +1-800-123-4567</p>
@@ -209,34 +216,35 @@ export default function Footer() {
 
           {/* Quick Links */}
           <div className="quick-links">
-            <h3 className="section-title">QUICK LINKS</h3>
+            <h3 className="section-title" style={{ fontSize: styles.fontSize.large }}>QUICK LINKS</h3>
             <nav className="link-list">
-              <a href="/" className="link-item">Home</a>
-              <a href="/about" className="link-item">About Us</a>
-              <a href="/products" className="link-item">Products</a>
-              <a href="/contact" className="link-item">Contact Us</a>
-              <a href="/faqs" className="link-item">FAQs</a>
+              <a href="/" className="link-item" style={{ fontSize: styles.fontSize.small }}>Home</a>
+              <a href="/about" className="link-item" style={{ fontSize: styles.fontSize.small }}>About Us</a>
+              <a href="/products" className="link-item" style={{ fontSize: styles.fontSize.small }}>Products</a>
+              <a href="/contact" className="link-item" style={{ fontSize: styles.fontSize.small }}>Contact Us</a>
+              <a href="/faqs" className="link-item" style={{ fontSize: styles.fontSize.small }}>FAQs</a>
             </nav>
           </div>
 
           {/* Resources */}
           <div className="resources">
-            <h3 className="section-title">RESOURCES</h3>
+            <h3 className="section-title" style={{ fontSize: styles.fontSize.large }}>RESOURCES</h3>
             <nav className="link-list">
-              <a href="/quality-assurance" className="link-item">Quality Assurance</a>
-              <a href="/export-guidelines" className="link-item">Export Guidelines</a>
-              <a href="/shipping-logistics" className="link-item">Shipping & Logistics</a>
-              <a href="/compliance" className="link-item">Compliance & Certifications</a>
-              <a href="/market-insights" className="link-item">Market Insights</a>
+              <a href="/quality-assurance" className="link-item" style={{ fontSize: styles.fontSize.small }}>Quality Assurance</a>
+              <a href="/export-guidelines" className="link-item" style={{ fontSize: styles.fontSize.small }}>Export Guidelines</a>
+              <a href="/shipping-logistics" className="link-item" style={{ fontSize: styles.fontSize.small }}>Shipping & Logistics</a>
+              <a href="/compliance" className="link-item" style={{ fontSize: styles.fontSize.small }}>Compliance & Certifications</a>
+              <a href="/market-insights" className="link-item" style={{ fontSize: styles.fontSize.small }}>Market Insights</a>
             </nav>
           </div>
         </div>
 
         {/* Copyright */}
         <div className="footer-bottom">
-          <p>© 2024 <span className="highlight-text">XLAYN</span>. All rights reserved.</p>
+          <p style={{ fontSize: styles.fontSize.small }}>© 2024 <span className="highlight-text">XLAYN</span>. All rights reserved.</p>
         </div>
       </div>
     </footer>
   );
 }
+

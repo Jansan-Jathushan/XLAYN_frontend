@@ -34,6 +34,7 @@
 import React from 'react';
 import { Routes, Route } from 'react-router-dom';
 import SupplierLayout from './SupplierLayout';
+import SupplierDashboard from './SupplierDashboard.js';
 import AddProducts from '../SupplierDashboard/AddProducts'; 
 import PendingProducts from './PendingProducts';
 import ProductLists from './ProductLists.js';
@@ -41,6 +42,7 @@ export default function SupplierRoutes() {
   return (
     <Routes>
       <Route path="/" element={<SupplierLayout />}>
+        <Route path="" element={<SupplierDashboard />} />
         <Route path="add-product" element={<AddProducts />} />
         <Route path="pending-product" element={<PendingProducts />} />
         <Route path="products-list" element={<ProductLists />} />

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useNavigate, Outlet } from 'react-router-dom';
 import {
   ChevronFirst,
@@ -13,14 +13,48 @@ import {
   Home,
 } from 'lucide-react';
 import zIndex from '@mui/material/styles/zIndex';
+import axios from 'axios';
+
 
 export default function SupplierLayout() {
   const [collapsed, setCollapsed] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState(null);
   const navigate = useNavigate();
+  const [supplier, setSupplier] = useState(null);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState("");
+
+
+
+  useEffect(() => {
+    const fetchSupplier = async () => {
+      // Retrieve supplierId from localStorage
+      const supplierId = localStorage.getItem("id");
+
+      if (!supplierId) {
+        setError("No supplier ID found in localStorage.");
+        setLoading(false);
+        return;
+      }
+
+      try {
+        const response = await axios.get(
+          `http://localhost:5000/api/register-request/get-supplier/${supplierId}`
+        );
+        setSupplier(response.data);
+      } catch (err) {
+        setError("Failed to load supplier details.");
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchSupplier();
+  }, []);
+
 
   const sidebarItems = [
-    { icon: LayoutDashboard, label: 'Dashboard', path: '/supplier/' },
+    { icon: LayoutDashboard, label: 'Dashboard', path: '/supplier' },
     { icon: ShoppingBag, label: 'Add Product', path: '/supplier/add-product' },
   { icon: ShoppingBag, label: 'Pending Products', path: '/supplier/pending-product' },
   { icon: ShoppingBag, label: 'Product List', path: '/supplier/products-list' },
@@ -111,7 +145,7 @@ export default function SupplierLayout() {
       display: 'flex',
       alignItems: 'left',
       justifyItems:'left',
-      justifyContent: collapsed ? 'center' : 'flex-start',
+      justifyContent: collapsed ? 'left' : 'flex-start',
       color: '#FBF6E2',
       background: 'none',
       border: 'none',
@@ -156,7 +190,7 @@ export default function SupplierLayout() {
           <div style={styles.sidebarHeader}>
             {!collapsed && (
               <div style={styles.logo}>
-                <img src="/placeholder.svg" alt="Logo" style={styles.logoImage} />
+                <img src="https://i.ibb.co/8mN47F7/XLAYN-1.png" alt="Logo" style={styles.logoImage} />
                 <span style={styles.logoText}>Supplier</span>
               </div>
             )}
@@ -208,7 +242,11 @@ export default function SupplierLayout() {
             <LogOut />
             {!collapsed && <span style={styles.logOutText(collapsed)}>Log Out</span>}
           </button>
-          {!collapsed && <div>&copy; 2024 Your Company Name</div>}
+          {!collapsed && (
+  <div  style={{fontSize:'12px', fontWeight:'bold'}}>
+    &copy; 2024 <span style={{ color: '#E68369' }}>XLAYN</span>. All rights reserved.
+  </div>
+)}
         </div>
       </aside>
 
@@ -227,6 +265,9 @@ export default function SupplierLayout() {
             >
               <Home />
             </button>
+            <div style={{ color: '#131842', marginRight:'1550px', marginTop:'auto',marginBottom:'auto',}}>
+             <h3>WelCome Back,</h3><h5>{supplier ? `${supplier.username}` : 'Loading...'}</h5>
+            </div>
           </div>
         </header>
         <main style={styles.mainContent}>

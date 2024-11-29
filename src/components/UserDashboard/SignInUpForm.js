@@ -332,68 +332,143 @@ const SignInUpForm = () => {
   };
   
   // Handle sign-in form submission
+  // const handleSignIn = async (event) => {
+  //   event.preventDefault();
+
+  //   if (!email || !password) {
+  //     alert("Please fill in all fields.");
+  //     return;
+  //   }
+
+  //   try {
+  //     const response = await axios.post('http://localhost:5000/api/users/login', { email, password });
+
+  //     if (response.status === 200) {
+  //       const { token, user, supplier, wholesaler } = response.data;
+
+  //       // Store user data and token in local storage
+  //       if (user) {
+  //         localStorage.setItem('token', token);
+  //         localStorage.setItem('role', user.role);
+  //         localStorage.setItem('id', user.id);
+  //         localStorage.setItem('status', user.status);
+
+  //         if (user.role === 'admin') {
+  //           navigate('/admin');
+  //         } else {
+  //           navigate('/');
+  //         }
+  //       } else if (supplier) {
+  //         localStorage.setItem('token', token);
+  //         localStorage.setItem('role', supplier.role);
+  //         localStorage.setItem('id', supplier.id);
+  //         localStorage.setItem('status', supplier.status);
+
+  //         // Check if supplier is approved
+  //         console.log(supplier.status); // Debug log
+  //         if (supplier.status === 'approved') {
+  //           navigate('/supplier');  // Ensure this route exists
+  //         } else {
+  //           setMessage('Supplier not approved yet.');
+  //         }
+  //       } else if (wholesaler) {
+  //         localStorage.setItem('token', token);
+  //         localStorage.setItem('role', wholesaler.role);
+  //         localStorage.setItem('id', wholesaler.id);
+  //         localStorage.setItem('status', wholesaler.status);
+
+  //         if (wholesaler.status === 'approved') {
+  //           navigate('/'); // Redirect to homepage
+  //         } else {
+  //           setMessage('Wholesaler not approved yet.');
+  //         }
+  //       } else {
+  //         setMessage('Invalid role');
+  //       }
+
+  //       alert('Sign-in successful!');
+  //     } else {
+  //       alert(`Sign-in error: ${response.data.error}`);
+  //     }
+  //   } catch (error) {
+  //     alert(`Network error: ${error.message}`);
+  //   }
+  // };
+
   const handleSignIn = async (event) => {
     event.preventDefault();
-
+  
     if (!email || !password) {
       alert("Please fill in all fields.");
       return;
     }
-
+  
     try {
       const response = await axios.post('http://localhost:5000/api/users/login', { email, password });
-
+  
       if (response.status === 200) {
         const { token, user, supplier, wholesaler } = response.data;
-
-        // Store user data and token in local storage
-        if (user) {
+        console.log("Response:", response.data); // Debug log
+  
+        if (token) {
           localStorage.setItem('token', token);
-          localStorage.setItem('role', user.role);
-          localStorage.setItem('id', user.id);
-          localStorage.setItem('status', user.status);
-
-          if (user.role === 'admin') {
-            navigate('/admin');
+  
+          if (user) {
+            localStorage.setItem('role', user.role);
+            localStorage.setItem('id', user.id);
+            localStorage.setItem('status', user.status);
+  
+            console.log("Navigating to Admin or Home", user.role);
+            if (user.role === 'admin') {
+              navigate('/admin'); // Primary navigation
+              window.location.href = '/admin'; // Fallback
+            } else {
+              navigate('/');
+              window.location.href = '/';
+            }
+          } else if (supplier) {
+            localStorage.setItem('role', supplier.role);
+            localStorage.setItem('id', supplier.id);
+            localStorage.setItem('status', supplier.status);
+  
+            console.log("Navigating to Supplier");
+            if (supplier.role === 'supplier' && supplier.status === 'approved') {
+              navigate('/supplier');
+              window.location.href = '/supplier';
+            } else {
+              setMessage('Supplier not approved yet.');
+            }
+          } else if (wholesaler) {
+            localStorage.setItem('role', wholesaler.role);
+            localStorage.setItem('id', wholesaler.id);
+            localStorage.setItem('status', wholesaler.status);
+  
+            console.log("Navigating to Home for Wholesaler");
+            if (wholesaler.role === 'wholesaler' && wholesaler.status === 'approved') {
+              navigate('/');
+              window.location.href = '/';
+            } else {
+              setMessage('Wholesaler not approved yet.');
+            }
           } else {
-            navigate('/');
+            setMessage('Invalid role.');
           }
-        } else if (supplier) {
-          localStorage.setItem('token', token);
-          localStorage.setItem('role', supplier.role);
-          localStorage.setItem('id', supplier.id);
-          localStorage.setItem('status', supplier.status);
-
-          // Check if supplier is approved
-          console.log(supplier.status); // Debug log
-          if (supplier.status === 'approved') {
-            navigate('/supplier');  // Ensure this route exists
-          } else {
-            setMessage('Supplier not approved yet.');
-          }
-        } else if (wholesaler) {
-          localStorage.setItem('token', token);
-          localStorage.setItem('role', wholesaler.role);
-          localStorage.setItem('id', wholesaler.id);
-          localStorage.setItem('status', wholesaler.status);
-
-          if (wholesaler.status === 'approved') {
-            navigate('/'); // Redirect to homepage
-          } else {
-            setMessage('Wholesaler not approved yet.');
-          }
+  
+          alert('Sign-in successful!');
         } else {
-          setMessage('Invalid role');
+          alert('Login failed. No token received.');
         }
-
-        alert('Sign-in successful!');
       } else {
         alert(`Sign-in error: ${response.data.error}`);
       }
     } catch (error) {
+      console.error("Error during login:", error.message);
       alert(`Network error: ${error.message}`);
     }
   };
+  
+  
+  
   
   return (
     <div className={`authForm-container ${isRightPanelActive ? 'authForm-right-panel-active' : ''}`} id="authForm-container">
@@ -438,10 +513,10 @@ const SignInUpForm = () => {
               </span>
             </div><br />
             <button type="submit">Sign Up</button>
-            <p>
+            <p className='nevigatelink'>
               If you want to register as Supplier/Wholesaler?
               <span 
-                style={{ cursor: 'pointer', color: 'blue', textDecoration: 'none' }} 
+                style={{ cursor: 'pointer', color: '#E68369', textDecoration: 'none' }} 
                 onClick={() => navigate('/register-from')}
               >
                 Click here

@@ -54,6 +54,7 @@
 import React from 'react';
 import { Routes, Route } from 'react-router-dom';
 import AdminLayout from './AdminLayout'; // Main Admin layout
+import AdminDashboard from './AdminDashboard.js';
 import Users from './Users.js';
 import Suppliers from './Supplier.js';
 import Wholesalers from './Wholesaler.js';
@@ -68,6 +69,7 @@ export default function AdminRoutes() {
     <Routes>
       <Route path="/" element={<AdminLayout />}>
         {/* Sub-routes within the Admin Dashboard */}
+        <Route path="" element={<AdminDashboard />} />
         <Route path="user-management" element={<Users />} />
         <Route path="supplier-management" element={<Suppliers />} />
         <Route path="wholesaler-management" element={<Wholesalers />} />

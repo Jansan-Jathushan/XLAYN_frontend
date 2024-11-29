@@ -86,15 +86,8 @@ import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-d
 import AdminMain from './components/AdminDashboard/AdminMain.js';
 import UserMain from './components/UserDashboard/UserMain.js';
 import SupplierMain from './components/SupplierDashboard/SupplierMain.js';
-import Users from './components/AdminDashboard/Users.js';
-import Suppliers from './components/AdminDashboard/Supplier.js';
-import Wholesalers from './components/AdminDashboard/Wholesaler.js';
-import AddProduct from './components/AdminDashboard/AddProduct.js';
-import Products from './components/AdminDashboard/Products.js';
-import PendingProducts from './components/AdminDashboard/ProductRequests.js';
-import ProductList from './components/AdminDashboard/ProductList.js';
-import OrderList from'./components/AdminDashboard/OrdeList.js';
-import ContactList from './components/AdminDashboard/ContactList.js';
+
+
 const App = () => {
   const [role, setUserRole] = useState(localStorage.getItem('role') || '');
   const [status, setSupplierStatus] = useState(localStorage.getItem('status') || '');
@@ -108,6 +101,8 @@ const App = () => {
 
     return () => window.removeEventListener('storage', handleStorageChange);
   }, []);
+
+  
 
   return (
     
@@ -123,14 +118,7 @@ const App = () => {
             element={role === 'supplier' && status === 'approved' ? <SupplierMain /> : <Navigate to="/" />}
           />
           <Route path="*" element={<Navigate to="/" />} />
-          <Route path="/users" element={<Users />} />
-          <Route path="/wholesaler" element={<Wholesalers />} />
-          <Route path="/addproduct" element={<AddProduct />} />
-          <Route path="/product" element={<Products />} />
-          <Route path="/product-request" element={<PendingProducts />} />
-          {/* <Route path="/product-list" element={<ProductList />} /> */}
-          <Route path="/order-list" element={<OrderList />} />
-          <Route path="/contact-list" element={<ContactList />} />
+         
 
 
 

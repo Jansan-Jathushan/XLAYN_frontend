@@ -1,4 +1,4 @@
-.register-request-container {
+/* .register-request-container {
   background-color: #fff;
   border-radius: 25px;
   box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
@@ -8,12 +8,11 @@
   width: 1100px;
   max-width: 100%;
   min-height: 480px;
-  margin: auto; /* Center the container */
-  margin-top: 50px; /* Top margin for spacing */
-  margin-bottom: 50px; /* Bottom margin for spacing */
+  margin: auto; 
+  margin-top: 50px; 
+  margin-bottom: 50px; 
 }
 
-/* Form Container Styles */
 .form-container {
   position: absolute;
   top: 0;
@@ -21,7 +20,6 @@
   transition: all 0.6s ease-in-out;
 }
 
-/* Supplier Form Styles */
 .register-request-supplier-form-container {
   left: 0;
   width: 50%;
@@ -29,10 +27,9 @@
   text-align: center;
   transform: translateX(0);
   transition: transform 0.6s ease-in-out;
-  animation: slide-in 0.6s ease-in-out; /* Animation for slide-in */
+  animation: slide-in 0.6s ease-in-out; 
 }
 
-/* Input Styles */
 .register-request-supplier-form-container input,
 .register-request-supplier-form-container select,
 .register-request-wholesaler-form-container input,
@@ -45,20 +42,17 @@
   border-radius: 10px;
 }
 
-/* Button Styles */
 .register-request-supplier-form-container button,
 .register-request-wholesaler-form-container button {
   width: 80%;
   padding: 10px;
 }
 
-/* Heading Styles */
 .register-request-supplier-form-container h1,
 .register-request-wholesaler-form-container h1 {
   margin-top: 30px;
 }
 
-/* Link Styles */
 .register-request-supplier-form-container span,
 .register-request-wholesaler-form-container span {
   margin-bottom: 10px;
@@ -70,13 +64,11 @@
   text-decoration: none;
 }
 
-/* Right Panel Active State */
 .container-supplier-wholesaler.right-panel-active .register-request-supplier-form-container {
   transform: translateX(100%);
-  animation: slide-out 0.6s ease-in-out; /* Animation for slide-out */
+  animation: slide-out 0.6s ease-in-out; 
 }
 
-/* Wholesaler Form Styles */
 .register-request-wholesaler-form-container {
   left: 0;
   width: 50%;
@@ -85,17 +77,16 @@
   text-align: center;
   transform: translateX(0);
   transition: transform 0.6s ease-in-out, opacity 0.6s ease-in-out;
-  animation: slide-in 0.6s ease-in-out; /* Animation for slide-in */
+  animation: slide-in 0.6s ease-in-out; 
 }
 
 .container-supplier-wholesaler.right-panel-active .register-request-wholesaler-form-container {
   transform: translateX(100%);
   opacity: 1;
   z-index: 5;
-  animation: slide-in 0.6s ease-in-out; /* Animation for wholesaler register */
+  animation: slide-in 0.6s ease-in-out; 
 }
 
-/* Overlay Styles */
 .register-request-overlay-container {
   position: absolute;
   top: 0;
@@ -111,7 +102,6 @@
   transform: translateX(-100%);
 }
 
-/* Background Image Overlay */
 .overlay {
   background-image: url(../../image/df.jpg);
   background-repeat: no-repeat;
@@ -130,7 +120,242 @@
   transform: translateX(50%);
 }
 
-/* Overlay Panel Styles */
+.overlay-panel-overlay-left,
+ .overlay-panel-overlay-right
+{
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 0 40px;
+  text-align: center;
+  top: 0;
+  height: 100%;
+  width: 50%;
+  background-color: rgba(0, 0, 0, 0.5);
+  transform: translateX(0);
+  transition: transform 0.6s ease-in-out;
+}
+
+.overlay-panel-overlay-left {
+  transform: translateX(-20%);
+}
+
+.container-supplier-wholesaler.right-panel-active .overlay-left {
+  transform: translateX(0);
+}
+
+.overlay-panel-overlay-right {
+  right: 0;
+  transform: translateX(0);
+}
+
+.container-supplier-wholesaler.right-panel-active .overlay-right {
+  transform: translateX(20%);
+}
+
+.social-container {
+  margin: 20px 0;
+}
+
+.social-container a {
+  border: 1px solid #DDDDDD;
+  border-radius: 50%;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 5px;
+  height: 40px;
+  width: 40px;
+}
+
+button {
+  border-radius: 20px;
+  border: 1px solid #00d2ee;
+  background-color: #00d2ee;
+  color: #FFFFFF;
+  font-size: 12px;
+  font-weight: bold;
+  padding: 12px 45px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  transition: transform 80ms ease-in;
+}
+
+button:active {
+  transform: scale(0.95);
+}
+
+button:focus {
+  outline: none;
+}
+
+button.ghost {
+  background-color: transparent;
+  border-color: #00d2ee;
+  color: #00d2ee;
+}
+
+.password-icon {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+}
+
+.password-icon i {
+  font-size: 18px;
+  color: #666;
+}
+
+.password-input {
+  padding-right: 50px;
+}
+
+@keyframes slide-in {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@keyframes slide-out {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+} */
+
+
+ 
+ 
+/* .container {
+  background-color: #fff;
+  border-radius: 25px;
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+  position: relative;
+  overflow: hidden;
+  height: 800px;
+  width: 1100px;
+  max-width: 100%;
+  min-height: 480px;
+
+}
+
+.form-container {
+  position: absolute;
+  top: 0;
+  height: 100%;
+  transition: all 0.6s ease-in-out;
+}
+
+.supplier-register-container {
+  left: 0;
+  width: 50%;
+  z-index: 2;
+  text-align: center;
+  transform: translateX(0);
+  transition: transform 0.6s ease-in-out;
+  animation: slide-in 0.6s ease-in-out;
+}
+
+.supplier-register-container input,
+.supplier-register-container select,
+.wholesaler-register-container input,
+.wholesaler-register-container select {
+  width: 80%;
+  padding: 10px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+}
+
+.supplier-register-container button,
+.wholesaler-register-container button {
+  width: 80%;
+  padding: 10px;
+  margin-top: 20px;
+}
+
+.supplier-register-container h1,
+.wholesaler-register-container h1 {
+  margin-top: 30px;
+}
+
+.supplier-register-container span,
+.wholesaler-register-container span {
+  margin-bottom: 10px;
+  padding-bottom: 10px;
+}
+
+.supplier-register-container a,
+.wholesaler-register-container a {
+  text-decoration: none;
+}
+
+.container-supplier-wholesaler.right-panel-active .supplier-register-container {
+  transform: translateX(100%);
+  animation: slide-out 0.6s ease-in-out;
+}
+
+.wholesaler-register-container {
+  left: 0;
+  width: 50%;
+  opacity: 0;
+  z-index: 1;
+  text-align: center;
+  transform: translateX(0);
+  transition: transform 0.6s ease-in-out, opacity 0.6s ease-in-out;
+  animation: slide-in 0.6s ease-in-out;
+}
+
+.container-supplier-wholesaler.right-panel-active .wholesaler-register-container {
+  transform: translateX(100%);
+  opacity: 1;
+  z-index: 5;
+  animation: slide-in 0.6s ease-in-out;
+}
+
+.overlay-container {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 50%;
+  height: 100%;
+  overflow: hidden;
+  transition: transform 0.6s ease-in-out;
+  z-index: 100;
+}
+
+.container-supplier-wholesaler.right-panel-active .overlay-container {
+  transform: translateX(-100%);
+}
+
+.overlay {
+  background-image: url(../../image/df.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 0 0;
+  color: #FFFFFF;
+  position: relative;
+  left: -100%;
+  height: 100%;
+  width: 200%;
+  transform: translateX(0);
+  transition: transform 0.6s ease-in-out;
+}
+
+.container-supplier-wholesaler.right-panel-active .overlay {
+  transform: translateX(50%);
+}
+
 .overlay-panel {
   position: absolute;
   display: flex;
@@ -164,7 +389,6 @@
   transform: translateX(20%);
 }
 
-/* Social Container Styles */
 .social-container {
   margin: 20px 0;
 }
@@ -180,7 +404,6 @@
   width: 40px;
 }
 
-/* Button Styles */
 button {
   border-radius: 20px;
   border: 1px solid #00d2ee;
@@ -208,7 +431,6 @@ button.ghost {
   color: #00d2ee;
 }
 
-/* Password Icon Styles */
 .password-icon {
   position: absolute;
   right: 10px;
@@ -224,23 +446,274 @@ button.ghost {
 
 .password-input {
   padding-right: 50px;
+} */
+
+body{
+  background: #FBF6E2;
 }
 
-/* Slide In and Slide Out Animations */
-@keyframes slide-in {
-  0% {
-    transform: translateX(100%);
-  }
-  100% {
-    transform: translateX(0);
-  }
+.register-request-container {
+  background-color: #131842;
+  border-radius: 25px;
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+  position: relative;
+  overflow: hidden;
+  height: 900px;
+  width: 1300px;
+  max-width: 100%;
+  min-height: 480px;
+  margin: auto;
+  margin-top: 50px;
+  margin-bottom: 50px;
 }
 
-@keyframes slide-out {
-  0% {
-    transform: translateX(0);
-  }
-  100% {
-    transform: translateX(100%);
-  }
+.register-request-form-container {
+  position: absolute;
+  top: 0;
+  height: 100%;
+  transition: all 0.6s ease-in-out;
+}
+
+.register-request-sign-in-container {
+  left: 0;
+  width: 50%;
+  z-index: 2;
+  text-align: center;
+  transform: translateX(0);
+  transition: transform 0.6s ease-in-out;
+  animation: slide-in 0.6s ease-in-out;
+}
+
+.register-request-sign-in-container input,
+.register-request-sign-up-container input,
+.register-request-sign-up-container select {
+  width: 80%;
+  padding: 10px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  background-color: transparent;
+  color: #ECCEAE;
+  border: 1px solid #ECCEAE;
+  border-radius: 10px;
+}
+
+.register-request-sign-in-container button,
+.register-request-sign-up-container button {
+  background-color: #E68369;
+  color: #FBF6E2;
+  border: 1px solid #E68369;
+  width: 80%;
+  padding: 10px;
+  margin-top: 20px;
+  border-radius: 10px;
+  font-size: 14px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.register-request-sign-in-container button:hover,
+.register-request-sign-up-container button:hover {
+  background-color: #ECCEAE;
+  color: #131842;
+}
+
+.register-request-sign-in-container h1{
+  margin-top: 75px;
+  color: #E68369;
+}
+.register-request-sign-up-container h1 {
+  margin-top: 75px;
+  color: #E68369;
+}
+
+.register-request-sign-in-container span,
+.register-request-sign-up-container span {
+  margin-bottom: 10px;
+  color: #E68369;
+}
+
+.register-request-sign-in-container a,
+.register-request-sign-up-container a {
+  text-decoration: none;
+  color: #E68369;
+}
+
+.register-request-container.register-request-right-panel-active .register-request-sign-in-container {
+  transform: translateX(100%);
+  animation: slide-out 0.6s ease-in-out;
+}
+
+.register-request-sign-up-container {
+  left: 0;
+  width: 50%;
+  opacity: 0;
+  z-index: 1;
+  text-align: center;
+  transform: translateX(0);
+  transition: transform 0.6s ease-in-out, opacity 0.6s ease-in-out;
+  animation: slide-in 0.6s ease-in-out;
+}
+
+.register-request-container.register-request-right-panel-active .register-request-sign-up-container {
+  transform: translateX(100%);
+  opacity: 1;
+  z-index: 5;
+  animation: slide-in 0.6s ease-in-out;
+}
+
+.register-request-overlay-container {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 50%;
+  height: 100%;
+  overflow: hidden;
+  transition: transform 0.6s ease-in-out;
+  z-index: 100;
+}
+
+.register-request-container.register-request-right-panel-active .register-request-overlay-container {
+  transform: translateX(-100%);
+}
+
+.register-request-overlay {
+  background-image: url(../../image/df.jpg);
+  /* filter: blur(16px); */
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 0 0;
+  color: #FFFFFF;
+  position: relative;
+  left: -100%;
+  height: 100%;
+  width: 200%;
+  transform: translateX(0);
+  transition: transform 0.6s ease-in-out;
+}
+
+.register-request-container.register-request-right-panel-active .register-request-overlay {
+  transform: translateX(50%);
+}
+
+.register-request-overlay-panel {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 0 40px;
+  text-align: center;
+  top: 0;
+  height: 100%;
+  width: 50%;
+  background-color: rgba(0, 0, 0, 0.7);
+  transform: translateX(0);
+  transition: transform 0.6s ease-in-out;
+}
+
+.register-request-overlay-container h1,
+.register-request-overlay-container p {
+  color: #FBF6E2;
+}
+
+.register-request-overlay-button {
+   background-color: transparent;
+   border: 3px solid #E68369;
+   color: #E68369;
+   font-weight: bold;
+
+}
+
+.register-request-overlay-left {
+  transform: translateX(-20%);
+}
+
+.register-request-container.register-request-right-panel-active .register-request-overlay-left {
+  transform: translateX(0);
+}
+
+.register-request-overlay-right {
+  right: 0;
+  transform: translateX(0);
+}
+
+.register-request-container.register-request-right-panel-active .register-request-overlay-right {
+  transform: translateX(20%);
+}
+
+.register-request-social-container {
+  margin: 20px 0;
+}
+
+.register-request-social-container a {
+  border: 1px solid #ECCEAE;
+  border-radius: 50%;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 5px;
+  height: 40px;
+  width: 40px;
+  background-color: #FBF6E2;
+  color: #131842;
+}
+
+.register-request-password-icon {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+}
+
+.register-request-password-icon i {
+  font-size: 18px;
+  color: #E68369;
+}
+
+.register-request-position-relative {
+  position: relative;
+}
+
+button {
+  border-radius: 20px;
+  border: 1px solid #E68369;
+  background-color: #E68369;
+  color: #FBF6E2;
+  font-size: 12px;
+  font-weight: bold;
+  padding: 12px 45px;
+  letter-spacing: 1px;
+  margin-bottom: 15px;
+  text-transform: uppercase;
+  transition: transform 80ms ease-in, background-color 0.3s ease, color 0.3s ease;
+}
+
+button:active {
+  transform: scale(0.95);
+}
+
+button:focus {
+  outline: none;
+}
+
+button.register-request-ghost {
+  background-color: transparent;
+  border-color: #131842;
+  color: #131842;
+}
+
+button.register-request-ghost:hover {
+  background-color: #ECCEAE;
+  color: #131842;
+}
+
+.register-request-signup-link {
+  cursor: pointer;
+  color: #E68369;
+}
+
+.nevigatelink {
+  color: #ECCEAE;
 }

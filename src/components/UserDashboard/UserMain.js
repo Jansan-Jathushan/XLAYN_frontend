@@ -11,12 +11,17 @@ import ContactUs from '../UserDashboard/ContactUs.js';
 import CartPage from '../UserDashboard/AddToCart.js';
 import OrderConfirmation from './orderPlace.js';
 import UserProfile from '../UserDashboard/UserProfile.js';
+import OrdersByUser from '../UserDashboard/OrderGet.js';
+import WholesalerProfile from  '../UserDashboard/WholesalerProfile.js';
+import { ThemeProvider, createTheme } from '@mui/material/styles';
+
 
 
 const UserMain = () => {
   return (
     <div>
-     
+    
+
       <NavbarMenu /> 
 
       <Routes>
@@ -27,8 +32,11 @@ const UserMain = () => {
         <Route path="/register-from" element={<RegisterForm />} /> 
         <Route path="/contact-us" element={<ContactUs />} /> 
         <Route path="/cartpage" element={<CartPage />} /> 
+        <Route path="/order" element={<OrdersByUser />} /> 
         <Route path="/order-confirmation" element={<OrderConfirmation/>} /> 
         <Route path="/user-profile" element={<UserProfile />} /> 
+        <Route path="/wholesaler-profile" element={<WholesalerProfile />} /> 
+
 
 
 
@@ -36,6 +44,8 @@ const UserMain = () => {
       </Routes>
 
       <Footer /> 
+     
+
     </div>
   );
 };
