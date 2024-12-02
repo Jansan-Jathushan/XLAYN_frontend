@@ -20,7 +20,7 @@ const ProfilePage = () => {
   useEffect(() => {
     const fetchUserDetails = async () => {
       try {
-        const response = await axios.get(`http://localhost:5000/api/users/profile/${userId}`);
+        const response = await axios.get(`${process.env.REACT_APP_SERVER_HOSTNAME}/api/users/profile/${userId}`);
         setUser(response.data);
       } catch (error) {
         console.error('Error fetching user details:', error);

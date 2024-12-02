@@ -54,20 +54,20 @@
 //         const fetchData = async () => {
 //             try {
 //                 const responses = await Promise.all([
-//                     fetch(`http://localhost:5000/api/users/profile/${userId}`).then((res) => res.json()),
-//                     fetch('http://localhost:5000/api/users/allProfile').then((res) => res.json()),
-//                     fetch('http://localhost:5000/api/product/admin/products/approved').then((res) => res.json()),
-//                     fetch('http://localhost:5000/api/product/admin/products/rejected').then((res) => res.json()),
-//                     fetch('http://localhost:5000/api/product/admin/products/pending').then((res) => res.json()),
-//                     fetch('http://localhost:5000/api/product/admin/get-products').then((res) => res.json()),
-//                     fetch('http://localhost:5000/api/register-request/supplier-requests').then((res) => res.json()),
-//                     fetch('http://localhost:5000/api/register-request/approved-suppliers').then((res) => res.json()),
-//                     fetch('http://localhost:5000/api/register-request/rejected-suppliers').then((res) => res.json()),
-//                     fetch('http://localhost:5000/api/register-request/wholesaler-requests').then((res) => res.json()),
-//                     fetch('http://localhost:5000/api/register-request/approved-wholesalers').then((res) => res.json()),
-//                     fetch('http://localhost:5000/api/register-request/rejected-wholesalers').then((res) => res.json()),
-//                     fetch('http://localhost:5000/api/contact/contact-us').then((res) => res.json()),
-//                     fetch('http://localhost:5000/api/order-pay/ordersget').then((res) => res.json()),
+//                     fetch('${process.env.REACT_APP_SERVER_HOSTNAME}/api/users/profile/${userId}').then((res) => res.json()),
+//                     fetch('${process.env.REACT_APP_SERVER_HOSTNAME}/api/users/allProfile').then((res) => res.json()),
+//                     fetch('${process.env.REACT_APP_SERVER_HOSTNAME}/api/product/admin/products/approved').then((res) => res.json()),
+//                     fetch('${process.env.REACT_APP_SERVER_HOSTNAME}/api/product/admin/products/rejected').then((res) => res.json()),
+//                     fetch('${process.env.REACT_APP_SERVER_HOSTNAME}/api/product/admin/products/pending').then((res) => res.json()),
+//                     fetch('${process.env.REACT_APP_SERVER_HOSTNAME}/api/product/admin/get-products').then((res) => res.json()),
+//                     fetch('${process.env.REACT_APP_SERVER_HOSTNAME}/api/register-request/supplier-requests').then((res) => res.json()),
+//                     fetch('${process.env.REACT_APP_SERVER_HOSTNAME}/api/register-request/approved-suppliers').then((res) => res.json()),
+//                     fetch('${process.env.REACT_APP_SERVER_HOSTNAME}/api/register-request/rejected-suppliers').then((res) => res.json()),
+//                     fetch('${process.env.REACT_APP_SERVER_HOSTNAME}/api/register-request/wholesaler-requests').then((res) => res.json()),
+//                     fetch('${process.env.REACT_APP_SERVER_HOSTNAME}/api/register-request/approved-wholesalers').then((res) => res.json()),
+//                     fetch('${process.env.REACT_APP_SERVER_HOSTNAME}/api/register-request/rejected-wholesalers').then((res) => res.json()),
+//                     fetch('${process.env.REACT_APP_SERVER_HOSTNAME}/api/contact/contact-us').then((res) => res.json()),
+//                     fetch('${process.env.REACT_APP_SERVER_HOSTNAME}/api/order-pay/ordersget').then((res) => res.json()),
 //                 ]);
 
 //                 setProfile(responses[0]);
@@ -362,7 +362,7 @@
 
 // // Custom Card Components remain the same...
 // const Card = ({ children, className = '' }) => (
-//   <div className={`bg-white rounded-lg shadow-md ${className}`}>
+//   <div className={'bg-white rounded-lg shadow-md ${className}'}>
 //     {children}
 //   </div>
 // );
@@ -380,7 +380,7 @@
 // );
 
 // const CardContent = ({ children, className = '' }) => (
-//   <div className={`p-4 ${className}`}>
+//   <div className={'p-4 ${className}'}>
 //     {children}
 //   </div>
 // );
@@ -412,7 +412,7 @@
 //   const fetchData = async (userId) => {
 //     try {
 //       const responses = await Promise.all([
-//         fetch(`/api/users/profile/${userId}`),
+//         fetch('/api/users/profile/${userId}'),
 //         fetch('/api/users/allProfile'),
 //         fetch('/api/product/admin/products/approved'),
 //         fetch('/api/product/admin/products/rejected'),
@@ -566,7 +566,7 @@
 //                 >
 //                   {productData.map((entry, index) => (
 //                     <Cell 
-//                       key={`cell-${index}`} 
+//                       key={'cell-${index}'} 
 //                       fill={[colors.primary, colors.secondary, colors.tertiary][index]}
 //                     />
 //                   ))}
@@ -628,11 +628,11 @@
 //                       <td className="p-2">{order.id}</td>
 //                       <td className="p-2">{order.customer}</td>
 //                       <td className="p-2">
-//                         <span className={`px-2 py-1 rounded-full text-xs ${
+//                         <span className={'px-2 py-1 rounded-full text-xs ${
 //                           order.status === 'completed' ? 'bg-green-100 text-green-800' :
 //                           order.status === 'pending' ? 'bg-yellow-100 text-yellow-800' :
 //                           'bg-gray-100 text-gray-800'
-//                         }`}>
+//                         }'}>
 //                           {order.status}
 //                         </span>
 //                       </td>
@@ -709,7 +709,7 @@ ChartJS.register(
   Legend
 )
 
-const BASE_URL = 'http://localhost:5000/api';
+const BASE_URL = `${process.env.REACT_APP_SERVER_HOSTNAME}/api`;
 
 async function fetchWithAuth(endpoint) {
   const token = localStorage.getItem('token');

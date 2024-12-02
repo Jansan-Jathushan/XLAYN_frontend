@@ -37,7 +37,7 @@ const AddProduct = ({ onClose }) => {
 
       // Make POST request to add product
       const response = await axios.post(
-        'http://localhost:5000/api/product/supplier/add-products',
+        `${process.env.REACT_APP_SERVER_HOSTNAME}/api/product/supplier/add-products`,
         formData,
         {
           headers: {
@@ -165,7 +165,7 @@ const styles = {
   formContainer: {
     width: '80%',
     maxWidth: '2000px',
-    height: '975px',
+    height: '97`px',
     padding: '20px',
     backgroundColor: '#ECCEAE',
     borderRadius: '8px',

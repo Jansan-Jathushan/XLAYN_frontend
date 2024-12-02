@@ -39,7 +39,7 @@ export default function SupplierLayout() {
 
       try {
         const response = await axios.get(
-          `http://localhost:5000/api/register-request/get-supplier/${supplierId}`
+          `${process.env.REACT_APP_SERVER_HOSTNAME}/api/register-request/get-supplier/${supplierId}`
         );
         setSupplier(response.data);
       } catch (err) {

@@ -36,8 +36,8 @@ const ProductLists = () => {
             try {
                 const endpoint =
                     tabValue === 'approved'
-                        ? 'http://localhost:5000/api/product/supplier/products/approved'
-                        : 'http://localhost:5000/api/product/supplier/products/rejected';
+                        ? `${process.env.REACT_APP_SERVER_HOSTNAME}/api/product/supplier/products/approved`
+                        : `${process.env.REACT_APP_SERVER_HOSTNAME}/api/product/supplier/products/rejected`;
 
                 const response = await axios.get(endpoint, {
                     headers: { Authorization: `Bearer ${token}` },

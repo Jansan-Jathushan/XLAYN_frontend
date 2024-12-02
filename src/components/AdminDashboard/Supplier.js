@@ -25,7 +25,7 @@
 //     useEffect(() => {
 //         const fetchSupplierRequests = async () => {
 //             try {
-//                 const response = await axios.get('http://localhost:5000/api/register-request/supplier-requests');
+//                 const response = await axios.get('${process.env.REACT_APP_SERVER_HOSTNAME}/api/register-request/supplier-requests');
 //                 setSupplierRequests(response.data);
 //                 setLoading(false);
 //             } catch (error) {
@@ -38,7 +38,7 @@
 
 //     const approveSupplier = async (id) => {
 //         try {
-//             await axios.put(`http://localhost:5000/api/register-request/approve-supplier/${id}`);
+//             await axios.put('${process.env.REACT_APP_SERVER_HOSTNAME}/api/register-request/approve-supplier/${id}');
 //             setSupplierRequests(supplierRequests.filter(request => request._id !== id));
 //         } catch (error) {
 //             console.error('Error approving supplier:', error);
@@ -47,7 +47,7 @@
 
 //     const rejectSupplier = async (id) => {
 //         try {
-//             await axios.put(`http://localhost:5000/api/register-request/reject-supplier/${id}`);
+//             await axios.put('${process.env.REACT_APP_SERVER_HOSTNAME}/api/register-request/reject-supplier/${id}');
 //             setSupplierRequests(supplierRequests.filter(request => request._id !== id));
 //         } catch (error) {
 //             console.error('Error rejecting supplier:', error);
@@ -226,9 +226,9 @@ const Suppliers = () => {
     const fetchSupplierRequests = async () => {
         setLoading(true);
         const endpointMap = {
-            pending: 'http://localhost:5000/api/register-request/supplier-requests',
-            approved: 'http://localhost:5000/api/register-request/approved-suppliers',
-            rejected: 'http://localhost:5000/api/register-request/rejected-suppliers'
+            pending: `${process.env.REACT_APP_SERVER_HOSTNAME}/api/register-request/supplier-requests`,
+            approved: `${process.env.REACT_APP_SERVER_HOSTNAME}/api/register-request/approved-suppliers`,
+            rejected: `${process.env.REACT_APP_SERVER_HOSTNAME}/api/register-request/rejected-suppliers`
         };
         try {
             const response = await axios.get(endpointMap[tabValue]);
@@ -248,7 +248,7 @@ const Suppliers = () => {
 
     const approveSupplier = async (id) => {
         try {
-            await axios.put(`http://localhost:5000/api/register-request/approve-supplier/${id}`);
+            await axios.put(`${process.env.REACT_APP_SERVER_HOSTNAME}/api/register-request/approve-supplier/${id}`);
             fetchSupplierRequests();
         } catch (error) {
             console.error('Error approving supplier:', error);
@@ -257,7 +257,7 @@ const Suppliers = () => {
 
     const rejectSupplier = async (id) => {
         try {
-            await axios.put(`http://localhost:5000/api/register-request/reject-supplier/${id}`);
+            await axios.put(`${process.env.REACT_APP_SERVER_HOSTNAME}/api/register-request/reject-supplier/${id}`);
             fetchSupplierRequests();
         } catch (error) {
             console.error('Error rejecting supplier:', error);

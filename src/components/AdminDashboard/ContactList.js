@@ -19,7 +19,7 @@
 //   useEffect(() => {
 //     const fetchContacts = async () => {
 //       try {
-//         const response = await axios.get('http://localhost:5000/api/contact/contact-us');
+//         const response = await axios.get('${process.env.REACT_APP_SERVER_HOSTNAME}/api/contact/contact-us');
 //         setContacts(response.data);
 //         setLoading(false);
 //       } catch (error) {
@@ -156,7 +156,7 @@
 //   useEffect(() => {
 //     const fetchContacts = async () => {
 //       try {
-//         const response = await axios.get('http://localhost:5000/api/contact/contact-us');
+//         const response = await axios.get('${process.env.REACT_APP_SERVER_HOSTNAME}/api/contact/contact-us');
 //         setContacts(response.data);
 //         setLoading(false);
 //       } catch (error) {
@@ -182,7 +182,7 @@
 
 //   const fetchContactFormEmail = async (id) => {
 //     try {
-//       const response = await fetch(`http://localhost:5000/api/contact/contact-us/reply/${id}`);
+//       const response = await fetch('${process.env.REACT_APP_SERVER_HOSTNAME}/api/contact/contact-us/reply/${id}');
 //       const data = await response.json();
 
 //       if (response.ok) {
@@ -199,7 +199,7 @@
 //     const email = await fetchContactFormEmail(id);
 
 //     if (email) {
-//       window.location.href = `mailto:${email}`;
+//       window.location.href = 'mailto:${email}';
 //     } else {
 //       alert('Failed to fetch email');
 //     }
@@ -335,7 +335,7 @@ const ContactList = () => {
   useEffect(() => {
     const fetchContacts = async () => {
       try {
-        const response = await axios.get('http://localhost:5000/api/contact/contact-us');
+        const response = await axios.get(`${process.env.REACT_APP_SERVER_HOSTNAME}/api/contact/contact-us`);
         setContacts(response.data);
         setLoading(false);
       } catch (error) {
@@ -361,7 +361,7 @@ const ContactList = () => {
 
   const fetchContactFormEmail = async (id) => {
     try {
-      const response = await fetch(`http://localhost:5000/api/contact/contact-us/reply/${id}`);
+      const response = await fetch(`${process.env.REACT_APP_SERVER_HOSTNAME}/api/contact/contact-us/reply/${id}`);
       const data = await response.json();
 
       if (response.ok) {

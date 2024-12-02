@@ -40,9 +40,9 @@ const Wholesalers = () => {
     const fetchWholesalerRequests = async () => {
         setLoading(true);
         const endpointMap = {
-            pending: 'http://localhost:5000/api/register-request/wholesaler-requests',
-            approved: 'http://localhost:5000/api/register-request/approved-wholesalers',
-            rejected: 'http://localhost:5000/api/register-request/rejected-wholesalers'
+            pending: `${process.env.REACT_APP_SERVER_HOSTNAME}/api/register-request/wholesaler-requests`,
+            approved: `${process.env.REACT_APP_SERVER_HOSTNAME}/api/register-request/approved-wholesalers`,
+            rejected: `${process.env.REACT_APP_SERVER_HOSTNAME}/api/register-request/rejected-wholesalers`
         };
         try {
             const response = await axios.get(endpointMap[tabValue]);
@@ -62,7 +62,7 @@ const Wholesalers = () => {
 
     const approveWholesaler = async (id) => {
         try {
-            await axios.put(`http://localhost:5000/api/register-request/approve-wholesaler/${id}`);
+            await axios.put(`${process.env.REACT_APP_SERVER_HOSTNAME}/api/register-request/approve-wholesaler/${id}`);
             fetchWholesalerRequests();
         } catch (error) {
             console.error('Error approving wholesaler:', error);
@@ -71,7 +71,7 @@ const Wholesalers = () => {
 
     const rejectWholesaler = async (id) => {
         try {
-            await axios.put(`http://localhost:5000/api/register-request/reject-wholesaler/${id}`);
+            await axios.put(`${process.env.REACT_APP_SERVER_HOSTNAME}/api/register-request/reject-wholesaler/${id}`);
             fetchWholesalerRequests();
         } catch (error) {
             console.error('Error rejecting wholesaler:', error);

@@ -70,22 +70,22 @@ const AddProduct = ({ onClose }) => {
     try {
       const token = localStorage.getItem('token');
       const response = await axios.post(
-        'http://localhost:5000/api/product/admin/add-products',
+        `${process.env.REACT_APP_SERVER_HOSTNAME}/api/product/admin/add-products`,
         formData,
         {
           headers: {
-            'Content-Type': 'multipart/form-data',
+            'Content-Type': `multipart/form-data`,
             'Authorization': `Bearer ${token}`,
           },
         }
       );
 
-      setStatusMessage(`Product added successfully: ${response.data.name}`);
+      setStatusMessage('Product added successfully: ${response.data.name}');
       setStatusType('success');
       setOpenSnackbar(true);
     } catch (err) {
       console.error('Error adding product:', err);
-      setStatusMessage(`Error adding product: ${err.response?.data?.message || err.message}`);
+      setStatusMessage('Error adding product: ${err.response?.data?.message || err.message}');
       setStatusType('error');
       setOpenSnackbar(true);
     } finally {

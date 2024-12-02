@@ -44,7 +44,7 @@
 //     }
   
 //     try {
-//       const response = await axios.post('http://localhost:5000/api/users/register', {
+//       const response = await axios.post('${process.env.REACT_APP_SERVER_HOSTNAME}/api/users/register', {
 //         firstName: signupFirstName,
 //         lastName: signupLastName,
 //         username: signupUsername,
@@ -71,10 +71,10 @@
 //           alert("Unauthorized role.");
 //         }
 //       } else {
-//         alert(`Sign-up error: ${response.data.error}`);
+//         alert('Sign-up error: ${response.data.error}');
 //       }
 //     } catch (error) {
-//       alert(`Network error: ${error.message}`);
+//       alert('Network error: ${error.message}');
 //     }
 //   };
   
@@ -89,7 +89,7 @@
 //     }
 
 //     try {
-//       const response = await axios.post('http://localhost:5000/api/users/login', { email, password,id,user,role });
+//       const response = await axios.post('${process.env.REACT_APP_SERVER_HOSTNAME}/api/users/login', { email, password,id,user,role });
 
 //       // Log the entire response to check its structure
 //       console.log(response.data);
@@ -144,15 +144,15 @@
 
 //         alert('Sign-in successful!');
 //       } else {
-//         alert(`Sign-in error: ${response.data.error}`);
+//         alert('Sign-in error: ${response.data.error}');
 //       }
 //     } catch (error) {
-//       alert(`Network error: ${error}`);
+//       alert('Network error: ${error}');
 //     }
 //   };
   
 //   return (
-//     <div className={`authForm-container ${isRightPanelActive ? 'authForm-right-panel-active' : ''}`} id="authForm-container">
+//     <div className={'authForm-container ${isRightPanelActive ? 'authForm-right-panel-active' : ''}'} id="authForm-container">
 //       {isRightPanelActive ? (
 //         <div className="authForm-form-container authForm-sign-up-container">
 //           <form onSubmit={handleSignUp}>
@@ -297,7 +297,7 @@ const SignInUpForm = () => {
     }
   
     try {
-      const response = await axios.post('http://localhost:5000/api/users/register', {
+      const response = await axios.post(`${process.env.REACT_APP_SERVER_HOSTNAME}/api/users/register`, {
         firstName: signupFirstName,
         lastName: signupLastName,
         username: signupUsername,
@@ -324,10 +324,10 @@ const SignInUpForm = () => {
           alert("Unauthorized role.");
         }
       } else {
-        alert(`Sign-up error: ${response.data.error}`);
+        alert('Sign-up error: ${response.data.error}');
       }
     } catch (error) {
-      alert(`Network error: ${error.message}`);
+      alert('Network error: ${error.message}');
     }
   };
   
@@ -341,7 +341,7 @@ const SignInUpForm = () => {
   //   }
 
   //   try {
-  //     const response = await axios.post('http://localhost:5000/api/users/login', { email, password });
+  //     const response = await axios.post('${process.env.REACT_APP_SERVER_HOSTNAME}/api/users/login', { email, password });
 
   //     if (response.status === 200) {
   //       const { token, user, supplier, wholesaler } = response.data;
@@ -388,10 +388,10 @@ const SignInUpForm = () => {
 
   //       alert('Sign-in successful!');
   //     } else {
-  //       alert(`Sign-in error: ${response.data.error}`);
+  //       alert('Sign-in error: ${response.data.error}');
   //     }
   //   } catch (error) {
-  //     alert(`Network error: ${error.message}`);
+  //     alert('Network error: ${error.message}');
   //   }
   // };
 
@@ -404,7 +404,7 @@ const SignInUpForm = () => {
     }
   
     try {
-      const response = await axios.post('http://localhost:5000/api/users/login', { email, password });
+      const response = await axios.post(`${process.env.REACT_APP_SERVER_HOSTNAME}/api/users/login`, { email, password });
   
       if (response.status === 200) {
         const { token, user, supplier, wholesaler } = response.data;
@@ -459,11 +459,11 @@ const SignInUpForm = () => {
           alert('Login failed. No token received.');
         }
       } else {
-        alert(`Sign-in error: ${response.data.error}`);
+        alert('Sign-in error: ${response.data.error}');
       }
     } catch (error) {
       console.error("Error during login:", error.message);
-      alert(`Network error: ${error.message}`);
+      alert('Network error: ${error.message}');
     }
   };
   

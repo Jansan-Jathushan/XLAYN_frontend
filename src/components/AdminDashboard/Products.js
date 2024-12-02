@@ -32,9 +32,9 @@
 //         return
 //       }
 
-//       const response = await axios.get('http://localhost:5000/api/product/admin/get-products', {
+//       const response = await axios.get('${process.env.REACT_APP_SERVER_HOSTNAME}/api/product/admin/get-products', {
 //         headers: {
-//           Authorization: `Bearer ${token}`,
+//           Authorization: 'Bearer ${token}',
 //         },
 //       })
 //       setProducts(response.data)
@@ -53,9 +53,9 @@
 //         return
 //       }
 
-//       const response = await axios.get(`http://localhost:5000/api/product/admin/get-products/${id}`, {
+//       const response = await axios.get('${process.env.REACT_APP_SERVER_HOSTNAME}/api/product/admin/get-products/${id}', {
 //         headers: {
-//           Authorization: `Bearer ${token}`,
+//           Authorization: 'Bearer ${token}',
 //         },
 //       })
 //       setUpdatedProduct(response.data)
@@ -108,11 +108,11 @@
 //       }
 
 //       await axios.put(
-//         `http://localhost:5000/api/product/admin/products/${updatedProduct._id}`,
+//         '${process.env.REACT_APP_SERVER_HOSTNAME}/api/product/admin/products/${updatedProduct._id}',
 //         updatedProduct,
 //         {
 //           headers: {
-//             Authorization: `Bearer ${token}`,
+//             Authorization: 'Bearer ${token}',
 //           },
 //         }
 //       )
@@ -132,9 +132,9 @@
 //         return
 //       }
 
-//       await axios.delete(`http://localhost:5000/api/product/admin/products/${id}`, {
+//       await axios.delete('${process.env.REACT_APP_SERVER_HOSTNAME}/api/product/admin/products/${id}', {
 //         headers: {
-//           Authorization: `Bearer ${token}`,
+//           Authorization: 'Bearer ${token}',
 //         },
 //       })
 //       alert('Product deleted successfully!')
@@ -182,7 +182,7 @@
 //                   <img 
 //                     key={index} 
 //                     src={url} 
-//                     alt={`Product image ${index}`} 
+//                     alt={'Product image ${index}'} 
 //                     className="img-thumbnail me-2 cursor-pointer" 
 //                     style={{ width: '48px', height: '48px', objectFit: 'cover', cursor: 'pointer' }}
 //                     onClick={() => handleImageClick(url)}
@@ -291,7 +291,7 @@
 //                 <img 
 //                   key={index} 
 //                   src={url} 
-//                   alt={`Product image ${index}`} 
+//                   alt={'Product image ${index}'} 
 //                   className="img-thumbnail"
 //                   style={{ width: '64px', height: '64px', objectFit: 'cover', cursor: 'pointer' }}
 //                   onClick={() => handleImageClick(url)}
@@ -477,7 +477,7 @@ const AdminProducts = () => {
         return;
       }
 
-      const response = await axios.get('http://localhost:5000/api/product/admin/get-products', {
+      const response = await axios.get(`${process.env.REACT_APP_SERVER_HOSTNAME}/api/product/admin/get-products`, {
         headers: {
           Authorization: `Bearer ${token}`,
         },
@@ -533,7 +533,7 @@ const AdminProducts = () => {
       }
 
       await axios.put(
-        `http://localhost:5000/api/product/admin/products/${updatedProduct._id}`,
+        `${process.env.REACT_APP_SERVER_HOSTNAME}/api/product/admin/products/${updatedProduct._id}`,
         updatedProduct,
         {
           headers: {
@@ -559,7 +559,7 @@ const AdminProducts = () => {
         return;
       }
 
-      await axios.delete(`http://localhost:5000/api/product/admin/products/${id}`, {
+      await axios.delete(`${process.env.REACT_APP_SERVER_HOSTNAME}/api/product/admin/products/${id}`, {
         headers: {
           Authorization: `Bearer ${token}`,
         },
@@ -657,7 +657,7 @@ const AdminProducts = () => {
                     <img
                       key={idx}
                       src={image}
-                      alt={`product-img-${idx}`}
+                      alt={'product-img-${idx}'}
                       width="50"
                       height="50"
                       onClick={() => handleImageClick(image)}

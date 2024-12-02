@@ -12,9 +12,9 @@
 //     try {
 //       const token = localStorage.getItem('token'); // Retrieve token from localStorage
 
-//       const res = await axios.get('http://localhost:5000/api/product/admin/products/pending', {
+//       const res = await axios.get('${process.env.REACT_APP_SERVER_HOSTNAME}/api/product/admin/products/pending', {
 //         headers: {
-//           Authorization: `Bearer ${token}`, // Set authorization header
+//           Authorization: 'Bearer ${token}', // Set authorization header
 //         },
 //       });
 //       setPendingProducts(res.data);
@@ -27,9 +27,9 @@
 //     try {
 //       const token = localStorage.getItem('token');
 
-//       await axios.post(`http://localhost:5000/api/product/admin/approveproducts/${id}`, {}, {
+//       await axios.post('${process.env.REACT_APP_SERVER_HOSTNAME}/api/product/admin/approveproducts/${id}', {}, {
 //         headers: {
-//           Authorization: `Bearer ${token}`,
+//           Authorization: 'Bearer ${token}',
 //         },
 //       });
 //       alert('Product approved successfully');
@@ -43,9 +43,9 @@
 //     try {
 //       const token = localStorage.getItem('token');
 
-//       await axios.post(`http://localhost:5000/api/product/admin/rejectproducts/${id}`, {}, {
+//       await axios.post('${process.env.REACT_APP_SERVER_HOSTNAME}/api/product/admin/rejectproducts/${id}', {}, {
 //         headers: {
-//           Authorization: `Bearer ${token}`,
+//           Authorization: 'Bearer ${token}',
 //         },
 //       });
 //       alert('Product rejected successfully');
@@ -158,7 +158,7 @@ const PendingProducts = () => {
     const fetchPendingProducts = async () => {
         try {
             const token = localStorage.getItem('token');
-            const res = await axios.get('http://localhost:5000/api/product/admin/products/pending', {
+            const res = await axios.get(`${process.env.REACT_APP_SERVER_HOSTNAME}/api/product/admin/products/pending`, {
                 headers: { Authorization: `Bearer ${token}` },
             });
             setPendingProducts(res.data);
@@ -179,8 +179,8 @@ const PendingProducts = () => {
     const handleApprove = async (id) => {
         try {
             const token = localStorage.getItem('token');
-            await axios.post(`http://localhost:5000/api/product/admin/approveproducts/${id}`, {}, {
-                headers: { Authorization: `Bearer ${token}` },
+            await axios.post(`${process.env.REACT_APP_SERVER_HOSTNAME}/api/product/admin/approveproducts/${id}`, {}, {
+                headers: { Authorization: 'Bearer ${token}' },
             });
             alert('Product approved successfully');
             fetchPendingProducts();
@@ -192,8 +192,8 @@ const PendingProducts = () => {
     const handleReject = async (id) => {
         try {
             const token = localStorage.getItem('token');
-            await axios.post(`http://localhost:5000/api/product/admin/rejectproducts/${id}`, {}, {
-                headers: { Authorization: `Bearer ${token}` },
+            await axios.post(`${process.env.REACT_APP_SERVER_HOSTNAME}/api/product/admin/rejectproducts/${id}`, {}, {
+                headers: { Authorization: 'Bearer ${token}' },
             });
             alert('Product rejected successfully');
             fetchPendingProducts();

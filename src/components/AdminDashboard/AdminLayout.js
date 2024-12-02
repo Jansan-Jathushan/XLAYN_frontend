@@ -288,7 +288,7 @@ export default function AdminLayout() {
     if (userId) {
       const fetchUserDetails = async () => {
         try {
-          const response = await axios.get(`http://localhost:5000/api/users/profile/${userId}`);
+          const response = await axios.get(`${process.env.REACT_APP_SERVER_HOSTNAME}/api/users/profile/${userId}`);
           console.log('User data fetched:', response.data); // Debugging: log the response data
           setUser(response.data);
         } catch (error) {

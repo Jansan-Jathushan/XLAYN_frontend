@@ -59,12 +59,12 @@
 //             console.log('idtest', id)
 //             const jwtToken = getJwtToken();
 //             const response = await axios.post(
-//                 'http://localhost:5000/api/payments/create-payment-intent',
+//                 '${process.env.REACT_APP_SERVER_HOSTNAME}/api/payments/create-payment-intent',
 //                 {  total: totalAmount, orderId:id },
 //                 {
 //                     headers: {
 //                         "Content-Type": "application/json",
-//                         Authorization: `Bearer ${jwtToken}`,
+//                         Authorization: 'Bearer ${jwtToken}',
 //                     },
 //                 // , withCredentials: true 
 //                 }
@@ -91,19 +91,19 @@
 //             userName: userName, 
 //             userEmail: userEmail, 
 //             userPhoneNumber: userPhoneNumber || "", 
-//             shippingAddress: `${shippingAddress.address}, ${shippingAddress.city}`, // Concatenate address and city
+//             shippingAddress: '${shippingAddress.address}, ${shippingAddress.city}', // Concatenate address and city
 //             totalAmount: totalAmount
 //         };
     
 //         try {
 //             const jwtToken = getJwtToken();
 //             const response = await axios.post(
-//                 'http://localhost:5000/api/order-pay/orders',
+//                 '${process.env.REACT_APP_SERVER_HOSTNAME}/api/order-pay/orders',
 //                 orderData,
 //                 {
 //                     headers: {
 //                         "Content-Type": "application/json",
-//                         Authorization: `Bearer ${jwtToken}`,
+//                         Authorization: 'Bearer ${jwtToken}',
 //                     },
 //                     // withCredentials: true,
 //                 }
@@ -261,12 +261,12 @@
 //         try {
 //             const jwtToken = getJwtToken();
 //             const response = await axios.post(
-//                 'http://localhost:5000/api/payments/create-payment-intent',
+//                 '${process.env.REACT_APP_SERVER_HOSTNAME}/api/payments/create-payment-intent',
 //                 { total: totalAmount, orderId: id },
 //                 {
 //                     headers: {
 //                         "Content-Type": "application/json",
-//                         Authorization: `Bearer ${jwtToken}`,
+//                         Authorization: 'Bearer ${jwtToken}',
 //                     },
 //                 }
 //             );
@@ -292,19 +292,19 @@
 //             userName: userName,
 //             userEmail: userEmail,
 //             userPhoneNumber: userPhoneNumber || "",
-//             shippingAddress: `${shippingAddress.address}, ${shippingAddress.city}`,
+//             shippingAddress: '${shippingAddress.address}, ${shippingAddress.city}',
 //             totalAmount: totalAmount
 //         };
 
 //         try {
 //             const jwtToken = getJwtToken();
 //             const response = await axios.post(
-//                 'http://localhost:5000/api/order-pay/orders',
+//                 '${process.env.REACT_APP_SERVER_HOSTNAME}/api/order-pay/orders',
 //                 orderData,
 //                 {
 //                     headers: {
 //                         "Content-Type": "application/json",
-//                         Authorization: `Bearer ${jwtToken}`,
+//                         Authorization: 'Bearer ${jwtToken}',
 //                     },
 //                 }
 //             );
@@ -383,8 +383,8 @@
 //                                 {cart?.items?.map((item) => (
 //                                     <ListItem key={item.productId}>
 //                                         <ListItemText
-//                                             primary={`${item.productName} - ${item.quantity} x $${item.price}`}
-//                                             secondary={`Subtotal: $${item.quantity * item.price}`}
+//                                             primary={'${item.productName} - ${item.quantity} x $${item.price}'}
+//                                             secondary={'Subtotal: $${item.quantity * item.price}'}
 //                                         />
 //                                     </ListItem>
 //                                 ))}
@@ -469,7 +469,7 @@ function OrderConfirmationPage() {
   };
 
   const validateInputs = () => {
-    if (!userName || !userEmail || !userPhoneNumber || !shippingAddress.address ) {
+    if (!userName || !userEmail || !userPhoneNumber || !shippingAddress.address) {
       alert("Please fill in all the fields.");
       return false;
     }
@@ -495,7 +495,7 @@ function OrderConfirmationPage() {
     try {
       const jwtToken = getJwtToken();
       const response = await axios.post(
-        "http://localhost:5000/api/order-pay/orders",
+        `${process.env.REACT_APP_SERVER_HOSTNAME}/api/order-pay/orders`,
         orderData,
         { headers: { "Content-Type": "application/json", Authorization: `Bearer ${jwtToken}` } }
       );
@@ -512,7 +512,7 @@ function OrderConfirmationPage() {
     try {
       const jwtToken = getJwtToken();
       const response = await axios.post(
-        "http://localhost:5000/api/payments/create-payment-intent",
+        `${process.env.REACT_APP_SERVER_HOSTNAME}/api/payments/create-payment-intent`,
         { total: totalAmount, orderId },
         { headers: { "Content-Type": "application/json", Authorization: `Bearer ${jwtToken}` } }
       );
@@ -544,7 +544,7 @@ function OrderConfirmationPage() {
             left: 0,
             width: "100%",
             height: "100%",
-            backgroundImage: `url(https://i.ibb.co/CmR6FL5/coverrrrrrrrrrrrrrrrrr111.webp)`,
+            backgroundImage: 'url(https://i.ibb.co/CmR6FL5/coverrrrrrrrrrrrrrrrrr111.webp)',
             backgroundSize: "cover",
             backgroundPosition: "center",
             filter: "blur(8px)",

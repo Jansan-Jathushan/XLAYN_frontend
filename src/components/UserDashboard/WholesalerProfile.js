@@ -20,7 +20,7 @@ const WholesalerProfile = () => {
 
       try {
         const response = await axios.get(
-          `http://localhost:5000/api/register-request/get-wholesaler/${wholesalerId}`
+          `${process.env.REACT_APP_SERVER_HOSTNAME}/api/register-request/get-wholesaler/${wholesalerId}`
         );
         setWholesaler(response.data);
       } catch (err) {

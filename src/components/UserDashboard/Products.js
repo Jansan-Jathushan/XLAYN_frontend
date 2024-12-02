@@ -28,7 +28,7 @@
 //   useEffect(() => {
 //     const fetchProducts = async () => {
 //       try {
-//         const response = await axios.get('http://localhost:5000/api/product/user/get-products');
+//         const response = await axios.get('${process.env.REACT_APP_SERVER_HOSTNAME}/api/product/user/get-products');
 //         setProducts(response.data);
 //       } catch (error) {
 //         console.error('Error fetching products:', error);
@@ -45,7 +45,7 @@
 //     }
 
 //     try {
-//       await axios.post('http://localhost:5000/api/add-tocart/cart', {
+//       await axios.post('${process.env.REACT_APP_SERVER_HOSTNAME}/api/add-tocart/cart', {
 //         userId,
 //         productId,
 //         quantity: 1,
@@ -140,7 +140,7 @@
 //           {currentProducts.map((product) => (
 //             <Col md={3} key={product._id}>
 //               <Card className="h-100 shadow-sm border-50 rounded">
-//                 <Card.Img variant="top" src={`http://localhost:5000/api/uploads/uploads/${product.imageUrls}`} alt={product.name} style={{ height: '200px', objectFit: 'cover' }} onError={(e) => e.target.src = ''} />
+//                 <Card.Img variant="top" src={'${process.env.REACT_APP_SERVER_HOSTNAME}/api/uploads/uploads/${product.imageUrls}'} alt={product.name} style={{ height: '200px', objectFit: 'cover' }} onError={(e) => e.target.src = ''} />
 //                 <Card.Body className="d-flex flex-column">
 //                   <Card.Title className="text-primary">{product.name}</Card.Title>
 //                   <Card.Text>{product.description}</Card.Text>
@@ -239,7 +239,7 @@ export default function Component() {
   useEffect(() => {
     const fetchProducts = async () => {
       try {
-        const response = await axios.get('http://localhost:5000/api/product/user/get-products');
+        const response = await axios.get(`${process.env.REACT_APP_SERVER_HOSTNAME}/api/product/user/get-products`);
         setProducts(response.data);
       } catch (error) {
         console.error('Error fetching products:', error);
@@ -257,7 +257,7 @@ export default function Component() {
     }
 
     try {
-      await axios.post('http://localhost:5000/api/add-tocart/cart', {
+      await axios.post(`${process.env.REACT_APP_SERVER_HOSTNAME}/api/add-tocart/cart`, {
         userId,
         productId,
         quantity: 1,

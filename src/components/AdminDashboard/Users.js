@@ -11,7 +11,7 @@
 // //     useEffect(() => {
 // //         const fetchUsers = async () => {
 // //             try {
-// //                 const response = await axios.get('http://localhost:5000/api/admin/users');
+// //                 const response = await axios.get('${process.env.REACT_APP_SERVER_HOSTNAME}/api/admin/users');
 // //                 setUsers(response.data);
 // //                 setLoading(false);
 // //             } catch (error) {
@@ -23,7 +23,7 @@
 
 // //     const handleDeleteUser = async (userId) => {
 // //         try {
-// //             await axios.delete(`http://localhost:5000/api/admin/users/${userId}`);
+// //             await axios.delete('${process.env.REACT_APP_SERVER_HOSTNAME}/api/admin/users/${userId}');
 // //             setUsers(users.filter(user => user._id !== userId)); // Update UI after delete
 // //         } catch (error) {
 // //             console.error('Error deleting user:', error);
@@ -79,7 +79,7 @@
 //     useEffect(() => {
 //         const fetchUsers = async () => {
 //             try {
-//                 const response = await axios.get('http://localhost:5000/api/admin/users');
+//                 const response = await axios.get('${process.env.REACT_APP_SERVER_HOSTNAME}/api/admin/users');
 //                 setUsers(response.data);
 //                 setLoading(false);
 //             } catch (error) {
@@ -91,7 +91,7 @@
 
 //     const handleDeleteUser = async (userId) => {
 //         try {
-//             await axios.delete(`http://localhost:5000/api/admin/users/${userId}`);
+//             await axios.delete('${process.env.REACT_APP_SERVER_HOSTNAME}/api/admin/users/${userId}');
 //             setUsers(users.filter(user => user._id !== userId)); // Update UI after delete
 //         } catch (error) {
 //             console.error('Error deleting user:', error);
@@ -100,7 +100,7 @@
 
 //     const handleUpdateRole = async () => {
 //         try {
-//             await axios.put(`http://localhost:5000/api/admin/users/${selectedUser._id}`, {
+//             await axios.put('${process.env.REACT_APP_SERVER_HOSTNAME}/api/admin/users/${selectedUser._id}', {
 //                 role: newRole
 //             });
 //             setUsers(users.map(user => user._id === selectedUser._id ? { ...user, role: newRole } : user));
@@ -197,12 +197,12 @@
 //         const fetchUsersAndRequests = async () => {
 //             try {
 //                 // Fetch users
-//                 const userResponse = await axios.get('http://localhost:5000/api/admin/users');
+//                 const userResponse = await axios.get('${process.env.REACT_APP_SERVER_HOSTNAME}/api/admin/users');
 //                 setUsers(userResponse.data);
 
 //                 // Fetch pending supplier and wholesaler requests
-//                 const supplierResponse = await axios.get('http://localhost:5000/api/register-request/supplier-requests');
-//                 const wholesalerResponse = await axios.get('http://localhost:5000/api/register-request/wholesaler-requests');
+//                 const supplierResponse = await axios.get('${process.env.REACT_APP_SERVER_HOSTNAME}/api/register-request/supplier-requests');
+//                 const wholesalerResponse = await axios.get('${process.env.REACT_APP_SERVER_HOSTNAME}/api/register-request/wholesaler-requests');
 //                 setSupplierRequests(supplierResponse.data);
 //                 setWholesalerRequests(wholesalerResponse.data);
 
@@ -216,7 +216,7 @@
 
 //     const handleDeleteUser = async (userId) => {
 //         try {
-//             await axios.delete(`http://localhost:5000/api/admin/users/${userId}`);
+//             await axios.delete('${process.env.REACT_APP_SERVER_HOSTNAME}/api/admin/users/${userId}');
 //             setUsers(users.filter(user => user._id !== userId)); // Update UI after delete
 //         } catch (error) {
 //             console.error('Error deleting user:', error);
@@ -225,7 +225,7 @@
 
 //     const handleUpdateRole = async () => {
 //         try {
-//             await axios.put(`http://localhost:5000/api/admin/users/${selectedUser._id}`, {
+//             await axios.put('${process.env.REACT_APP_SERVER_HOSTNAME}/api/admin/users/${selectedUser._id}', {
 //                 role: newRole
 //             });
 //             setUsers(users.map(user => user._id === selectedUser._id ? { ...user, role: newRole } : user));
@@ -244,19 +244,19 @@
 //     // Handle approve or reject for suppliers and wholesalers
 //     const handleSupplierAction = async (id, action) => {
 //         try {
-//             await axios.post(`http://localhost:5000/api/register-request/${action}`, { id });
+//             await axios.post('${process.env.REACT_APP_SERVER_HOSTNAME}/api/register-request/${action}', { id });
 //             setSupplierRequests(supplierRequests.filter(request => request._id !== id)); // Remove the request from the UI
 //         } catch (error) {
-//             console.error(`Error trying to ${action} supplier:`, error);
+//             console.error('Error trying to ${action} supplier:', error);
 //         }
 //     };
 
 //     const handleWholesalerAction = async (id, action) => {
 //         try {
-//             await axios.post(`http://localhost:5000/api/register-request/${action}`, { id });
+//             await axios.post('${process.env.REACT_APP_SERVER_HOSTNAME}/api/register-request/${action}', { id });
 //             setWholesalerRequests(wholesalerRequests.filter(request => request._id !== id)); // Remove the request from the UI
 //         } catch (error) {
-//             console.error(`Error trying to ${action} wholesaler:`, error);
+//             console.error('Error trying to ${action} wholesaler:', error);
 //         }
 //     };
 
@@ -401,7 +401,7 @@
 //     useEffect(() => {
 //         const fetchUsers = async () => {
 //             try {
-//                 const response = await axios.get('http://localhost:5000/api/admin/users');
+//                 const response = await axios.get('${process.env.REACT_APP_SERVER_HOSTNAME}/api/admin/users');
 //                 setUsers(response.data);
 //                 setLoading(false);
 //             } catch (error) {
@@ -411,7 +411,7 @@
 
 //         const fetchSupplierRequests = async () => {
 //             try {
-//                 const response = await axios.get('http://localhost:5000/api/register-request/supplier-requests');
+//                 const response = await axios.get('${process.env.REACT_APP_SERVER_HOSTNAME}/api/register-request/supplier-requests');
 //                 setSupplierRequests(response.data);
 //             } catch (error) {
 //                 console.error('Error fetching supplier requests:', error);
@@ -420,7 +420,7 @@
 
 //         const fetchWholesalerRequests = async () => {
 //             try {
-//                 const response = await axios.get('http://localhost:5000/api/register-request/wholesaler-requests');
+//                 const response = await axios.get('${process.env.REACT_APP_SERVER_HOSTNAME}/api/register-request/wholesaler-requests');
 //                 setWholesalerRequests(response.data);
 //             } catch (error) {
 //                 console.error('Error fetching wholesaler requests:', error);
@@ -435,7 +435,7 @@
 //     // Handle delete user
 //     const handleDeleteUser = async (userId) => {
 //         try {
-//             await axios.delete(`http://localhost:5000/api/admin/users/${userId}`);
+//             await axios.delete('${process.env.REACT_APP_SERVER_HOSTNAME}/api/admin/users/${userId}');
 //             setUsers(users.filter(user => user._id !== userId));
 //         } catch (error) {
 //             console.error('Error deleting user:', error);
@@ -445,7 +445,7 @@
 //     // Handle update user role
 //     const handleUpdateRole = async () => {
 //         try {
-//             await axios.put(`http://localhost:5000/api/admin/users/${selectedUser._id}`, {
+//             await axios.put('${process.env.REACT_APP_SERVER_HOSTNAME}/api/admin/users/${selectedUser._id}', {
 //                 role: newRole
 //             });
 //             setUsers(users.map(user => user._id === selectedUser._id ? { ...user, role: newRole } : user));
@@ -464,7 +464,7 @@
 //     // Approve Supplier
 //     const approveSupplier = async (id) => {
 //         try {
-//             await axios.put(`http://localhost:5000/api/register-request/approve-supplier/${ id }`);
+//             await axios.put('${process.env.REACT_APP_SERVER_HOSTNAME}/api/register-request/approve-supplier/${ id }');
 //             setSupplierRequests(supplierRequests.filter(request => request._id !== id));
 //         } catch (error) {
 //             console.error('Error approving supplier:', error);
@@ -474,7 +474,7 @@
 //     // Reject Supplier
 //     const rejectSupplier = async (id) => {
 //         try {
-//             await axios.put(`http://localhost:5000/api/register-request/reject-supplier/${ id }`);
+//             await axios.put('${process.env.REACT_APP_SERVER_HOSTNAME}/api/register-request/reject-supplier/${ id }');
 //             setSupplierRequests(supplierRequests.filter(request => request._id !== id));
 //         } catch (error) {
 //             console.error('Error rejecting supplier:', error);
@@ -484,7 +484,7 @@
 //     // Approve Wholesaler
 //     const approveWholesaler = async (id) => {
 //         try {
-//             await axios.put(`http://localhost:5000/api/register-request/approve-wholesaler/${ id }`);
+//             await axios.put('${process.env.REACT_APP_SERVER_HOSTNAME}/api/register-request/approve-wholesaler/${ id }');
 //             setWholesalerRequests(wholesalerRequests.filter(request => request._id !== id));
 //         } catch (error) {
 //             console.error('Error approving wholesaler:', error);
@@ -494,7 +494,7 @@
 //     // Reject Wholesaler
 //     const rejectWholesaler = async (id) => {
 //         try {
-//             await axios.put(`localhost:5000/api/register-request/reject-wholesaler/${ id }`);
+//             await axios.put('localhost:5000/api/register-request/reject-wholesaler/${ id }');
 //             setWholesalerRequests(wholesalerRequests.filter(request => request._id !== id));
 //         } catch (error) {
 //             console.error('Error rejecting wholesaler:', error);
@@ -640,7 +640,7 @@
 //     useEffect(() => {
 //         const fetchUsers = async () => {
 //             try {
-//                 const response = await axios.get('http://localhost:5000/api/admin/users');
+//                 const response = await axios.get('${process.env.REACT_APP_SERVER_HOSTNAME}/api/admin/users');
 //                 setUsers(response.data);
 //                 setLoading(false);
 //             } catch (error) {
@@ -678,8 +678,7 @@
 //     );
 // };
 
-// export default Users; // Default export
-
+// export default Users; // Default export`
 
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
@@ -704,7 +703,7 @@ const UserManagement = () => {
     useEffect(() => {
         const fetchUsers = async () => {
             try {
-                const response = await axios.get('http://localhost:5000/api/admin/users');
+                const response = await axios.get(`${process.env.REACT_APP_SERVER_HOSTNAME}/api/admin/users`);
                 setUsers(response.data);
                 setLoading(false);
             } catch (error) {
@@ -717,7 +716,7 @@ const UserManagement = () => {
 
     const handleDeleteUser = async (userId) => {
         try {
-            await axios.delete(`http://localhost:5000/api/admin/users/${userId}`);
+            await axios.delete(`${process.env.REACT_APP_SERVER_HOSTNAME}/api/admin/users/${userId}`);
             setUsers(users.filter(user => user._id !== userId));
         } catch (error) {
             console.error('Error deleting user:', error);
@@ -727,7 +726,7 @@ const UserManagement = () => {
     const handleUpdateRole = async () => {
         if (selectedUser) {
             try {
-                await axios.put(`http://localhost:5000/api/admin/users/${selectedUser._id}`, {
+                await axios.put(`${process.env.REACT_APP_SERVER_HOSTNAME}/api/admin/users/${selectedUser._id}`, {
                     role: newRole
                 });
                 setUsers(users.map(user => user._id === selectedUser._id ? { ...user, role: newRole } : user));

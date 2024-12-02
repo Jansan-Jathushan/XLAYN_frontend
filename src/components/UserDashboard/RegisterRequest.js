@@ -66,7 +66,7 @@
 //         formData.append(key, supplierDetails[key]);
 //       });
 
-//       const response = await axios.post('http://localhost:5000/api/register-request/register-supplier', formData, {
+//       const response = await axios.post('${process.env.REACT_APP_SERVER_HOSTNAME}/api/register-request/register-supplier', formData, {
 //         headers: { 'Content-Type': 'multipart/form-data' }
 //       });
 //       alert(response.data.message);
@@ -84,7 +84,7 @@
 //         formData.append(key, wholesalerDetails[key]);
 //       });
 
-//       const response = await axios.post('http://localhost:5000/api/register-request/register-wholesaler', formData, {
+//       const response = await axios.post('${process.env.REACT_APP_SERVER_HOSTNAME}/api/register-request/register-wholesaler', formData, {
 //         headers: { 'Content-Type': 'multipart/form-data' }
 //       });
 //       alert(response.data.message);
@@ -94,7 +94,7 @@
 //   };
 
 //   return (
-//     <div className={`register-request-container ${isRightPanelActive ? 'register-request-right-panel-active' : ''}`} id="register-request-container">
+//     <div className={'register-request-container ${isRightPanelActive ? 'register-request-right-panel-active' : ''}'} id="register-request-container">
 //       {/* Supplier Registration */}
 //       {isRightPanelActive ? (
 //         <div className="register-request-supplier-form-container sign-up-container">
@@ -237,7 +237,7 @@
 //         formData.append(key, supplierDetails[key]);
 //       });
 
-//       const response = await axios.post('http://localhost:5000/api/register-request/register-supplier', formData, {
+//       const response = await axios.post('${process.env.REACT_APP_SERVER_HOSTNAME}/api/register-request/register-supplier', formData, {
 //         headers: { 'Content-Type': 'multipart/form-data' }
 //       });
 //       alert(response.data.message);
@@ -255,7 +255,7 @@
 //         formData.append(key, wholesalerDetails[key]);
 //       });
 
-//       const response = await axios.post('http://localhost:5000/api/register-request/register-wholesaler', formData, {
+//       const response = await axios.post('${process.env.REACT_APP_SERVER_HOSTNAME}/api/register-request/register-wholesaler', formData, {
 //         headers: { 'Content-Type': 'multipart/form-data' }
 //       });
 //       alert(response.data.message);
@@ -265,7 +265,7 @@
 //   };
 
 //   return (
-//     <div className={`container ${isRightPanelActive ? 'right-panel-active' : ''}`} id="container">
+//     <div className={'container ${isRightPanelActive ? 'right-panel-active' : ''}'} id="container">
 //       {/* Supplier Registration */}
 //       {isRightPanelActive ? (
 //         <div className="form-container sign-up-container">
@@ -411,7 +411,7 @@ const RegisterForm = () => {
         formData.append(key, supplierDetails[key]);
       });
 
-      const response = await axios.post('http://localhost:5000/api/register-request/register-supplier', formData, {
+      const response = await axios.post(`${process.env.REACT_APP_SERVER_HOSTNAME}/api/register-request/register-supplier`, formData, {
         headers: { 'Content-Type': 'multipart/form-data' }
       });
       alert(response.data.message);
@@ -431,7 +431,7 @@ const RegisterForm = () => {
 
     console.log(...formData.entries()); // Debugging log
 
-    const response = await axios.post('http://localhost:5000/api/register-request/register-wholesaler', formData, {
+    const response = await axios.post(`${process.env.REACT_APP_SERVER_HOSTNAME}/api/register-request/register-wholesaler`, formData, {
       headers: { 'Content-Type': 'multipart/form-data' }
     });
     alert(response.data.message);

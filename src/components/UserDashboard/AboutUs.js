@@ -28,7 +28,7 @@ export default function AboutUs() {
           <div key={index} className={`hero-overlay ${index === currentSlide ? 'd-block' : 'd-none'}`}>
             <img
               src={slide}
-              alt={`Slide ${index + 1}`}
+              alt={'Slide ${index + 1}'}
               className="w-100 h-100 object-cover hero-image-filter"
             />
           </div>

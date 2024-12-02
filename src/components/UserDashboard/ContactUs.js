@@ -42,7 +42,7 @@
 //     e.preventDefault();
     
 //     try {
-//       const response = await fetch('http://localhost:5000/api/contact/contact-us', {
+//       const response = await fetch('${process.env.REACT_APP_SERVER_HOSTNAME}/api/contact/contact-us', {
 //         method: 'POST',
 //         headers: {
 //           'Content-Type': 'application/json',
@@ -63,7 +63,7 @@
 //         window.alert("Form submitted successfully!");
 //       } else {
 //         console.error("Error:", data);  // Log the error response body
-//         setFormStatus(`Error: ${data.message}`);
+//         setFormStatus('Error: ${data.message}');
 //       }
 //     } catch (error) {
 //       console.error("Submission error:", error);  // Log network or other errors
@@ -236,7 +236,7 @@ export default function ContactComponent() {
     e.preventDefault();
 
     try {
-      const response = await fetch("http://localhost:5000/api/contact/contact-us", {
+      const response = await fetch(`${process.env.REACT_APP_SERVER_HOSTNAME}/api/contact/contact-us`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -257,7 +257,7 @@ export default function ContactComponent() {
         window.alert("Form submitted successfully!");
       } else {
         console.error("Error:", data);
-        setFormStatus(`Error: ${data.message}`);
+        setFormStatus('Error: ${data.message}');
       }
     } catch (error) {
       console.error("Submission error:", error);

@@ -151,7 +151,7 @@ const SupplierProducts = () => {
         return;
       }
 
-      const response = await axios.get('http://localhost:5000/api/product/supplier/products/pending', {
+      const response = await axios.get(`${process.env.REACT_APP_SERVER_HOSTNAME}/api/product/supplier/products/pending`, {
         headers: {
           Authorization: `Bearer ${token}`,
         },
@@ -207,7 +207,7 @@ const SupplierProducts = () => {
       }
 
       await axios.put(
-        `http://localhost:5000/api/product/supplier/products/${updatedProduct._id}`,
+        `${process.env.REACT_APP_SERVER_HOSTNAME}/api/product/supplier/products/${updatedProduct._id}`,
         updatedProduct,
         {
           headers: {
@@ -233,7 +233,7 @@ const SupplierProducts = () => {
         return;
       }
 
-      await axios.delete(`http://localhost:5000/api/product/supplier/products/${id}`, {
+      await axios.delete(`${process.env.REACT_APP_SERVER_HOSTNAME}/api/product/supplier/products/${id}`, {
         headers: {
           Authorization: `Bearer ${token}`,
         },

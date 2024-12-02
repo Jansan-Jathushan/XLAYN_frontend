@@ -21,7 +21,7 @@
 
 //   const fetchCart = async () => {
 //     try {
-//       const response = await axios.get(`http://localhost:5000/api/add-tocart/cart/${userId}`);
+//       const response = await axios.get('${process.env.REACT_APP_SERVER_HOSTNAME}/api/add-tocart/cart/${userId}');
 //       setCart(response.data);
 //     } catch (error) {
 //       setErrorMessage('Failed to fetch cart.');
@@ -31,7 +31,7 @@
 
 //   const updateCartItemQuantity = async (productId, quantity) => {
 //     try {
-//       const response = await axios.put('http://localhost:5000/api/add-tocart/cart', {
+//       const response = await axios.put('${process.env.REACT_APP_SERVER_HOSTNAME}/api/add-tocart/cart', {
 //         userId,
 //         productId,
 //         quantity,
@@ -45,7 +45,7 @@
 
 //   const removeCartItem = async (productId) => {
 //     try {
-//       const response = await axios.delete('http://localhost:5000/api/add-tocart/cart/item', {
+//       const response = await axios.delete('${process.env.REACT_APP_SERVER_HOSTNAME}/api/add-tocart/cart/item', {
 //         data: { userId, productId },
 //       });
 //       setCart(response.data.cart);
@@ -57,7 +57,7 @@
 
 //   const clearCart = async () => {
 //     try {
-//       const response = await axios.delete(`http://localhost:5000/api/add-tocart/cart/${userId}`);
+//       const response = await axios.delete('${process.env.REACT_APP_SERVER_HOSTNAME}/api/add-tocart/cart/${userId}');
 //       setCart(response.data.cart);
 //     } catch (error) {
 //       setErrorMessage('Failed to clear cart.');
@@ -425,7 +425,7 @@ const PageWrapper = styled(Box)({
     left: 0,
     width: "100%",
     height: "100%",
-    backgroundImage: `url(https://i.ibb.co/zhZhF9w/cover2222222222222222222222.webp)`,
+    backgroundImage: 'url(https://i.ibb.co/zhZhF9w/cover2222222222222222222222.webp)',
     backgroundSize: "cover",
     backgroundPosition: "center",
     filter: "blur(8px)",
@@ -515,7 +515,7 @@ const CartPage = () => {
 
   const fetchCart = async () => {
     try {
-      const response = await axios.get(`http://localhost:5000/api/add-tocart/cart/${userId}`);
+      const response = await axios.get(`${process.env.REACT_APP_SERVER_HOSTNAME}/api/add-tocart/cart/${userId}`);
       setCart(response.data);
     } catch (error) {
       setErrorMessage('Failed to fetch cart.');
@@ -525,7 +525,7 @@ const CartPage = () => {
 
   const updateCartItemQuantity = async (productId, quantity) => {
     try {
-      const response = await axios.put('http://localhost:5000/api/add-tocart/cart', {
+      const response = await axios.put(`${process.env.REACT_APP_SERVER_HOSTNAME}/api/add-tocart/cart`, {
         userId,
         productId,
         quantity,
@@ -539,7 +539,7 @@ const CartPage = () => {
 
   const removeCartItem = async (productId) => {
     try {
-      const response = await axios.delete('http://localhost:5000/api/add-tocart/cart/item', {
+      const response = await axios.delete(`${process.env.REACT_APP_SERVER_HOSTNAME}/api/add-tocart/cart/item`, {
         data: { userId, productId },
       });
       setCart(response.data.cart);
@@ -551,7 +551,7 @@ const CartPage = () => {
 
   const clearCart = async () => {
     try {
-      const response = await axios.delete(`http://localhost:5000/api/add-tocart/cart/${userId}`);
+      const response = await axios.delete(`${process.env.REACT_APP_SERVER_HOSTNAME}/api/add-tocart/cart/${userId}`);
       setCart(response.data.cart);
     } catch (error) {
       setErrorMessage('Failed to clear cart.');

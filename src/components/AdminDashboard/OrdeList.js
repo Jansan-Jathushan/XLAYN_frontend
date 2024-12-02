@@ -9,7 +9,7 @@
 //     useEffect(() => {
 //         const fetchOrders = async () => {
 //             try {
-//                 const response = await axios.get('http://localhost:5000/api/order-pay/ordersget');
+//                 const response = await axios.get('${process.env.REACT_APP_SERVER_HOSTNAME}/api/order-pay/ordersget');
 //                 setOrders(response.data);
 //             } catch (error) {
 //                 setError('Error fetching orders');
@@ -121,7 +121,7 @@ const OrderPage = () => {
 
     const fetchOrders = async () => {
         try {
-            const response = await axios.get('http://localhost:5000/api/order-pay/ordersget');
+            const response = await axios.get(`${process.env.REACT_APP_SERVER_HOSTNAME}/api/order-pay/ordersget`);
             setOrders(response.data);
         } catch (error) {
             console.error("Error fetching orders:", error);

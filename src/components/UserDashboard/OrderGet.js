@@ -37,7 +37,7 @@ const OrdersByUser = () => {
         }
 
         const response = await axios.get(
-          `http://localhost:5000/api/order-pay/orders/user/${userId}`
+          `${process.env.REACT_APP_SERVER_HOSTNAME}/api/order-pay/orders/user/${userId}`
         );
         setOrders(response.data);
       } catch (err) {
@@ -106,7 +106,7 @@ const OrdersByUser = () => {
               <TableBody>
                 {currentOrders.map((order) =>
                   order.items.map((item, index) => (
-                    <TableRow key={`${order._id}-${index}`}>
+                    <TableRow key={'${order._id}-${index}'}>
                       <TableCell>{item.productName || 'N/A'}</TableCell>
                       <TableCell>{item.supplierBusinessName || 'N/A'}</TableCell>
                       <TableCell>{item.quantity}</TableCell>

@@ -13,9 +13,9 @@
 //   // Fetch approved products
 //   const fetchApprovedProducts = async () => {
 //     try {
-//       const response = await axios.get('http://localhost:5000/api/product/admin/products/approved', {
+//       const response = await axios.get('${process.env.REACT_APP_SERVER_HOSTNAME}/api/product/admin/products/approved', {
 //         headers: {
-//           Authorization: `Bearer ${token}`,  // Send the token in the Authorization header
+//           Authorization: 'Bearer ${token}',  // Send the token in the Authorization header
 //         },
 //       });
 //       setApprovedProducts(response.data);
@@ -28,9 +28,9 @@
 //   // Fetch rejected products
 //   const fetchRejectedProducts = async () => {
 //     try {
-//       const response = await axios.get('http://localhost:5000/api/product/admin/products/rejected', {
+//       const response = await axios.get('${process.env.REACT_APP_SERVER_HOSTNAME}/api/product/admin/products/rejected', {
 //         headers: {
-//           Authorization: `Bearer ${token}`,  // Send the token in the Authorization header
+//           Authorization: 'Bearer ${token}',  // Send the token in the Authorization header
 //         },
 //       });
 //       setRejectedProducts(response.data);
@@ -92,7 +92,7 @@
 //                     <img
 //                       key={index}
 //                       src={imageUrl} // This should be the URL of the image (Cloudinary or other)
-//                       alt={`Product Image ${index + 1}`}
+//                       alt={'Product Image ${index + 1}'}
 //                       style={{ width: '100px', height: 'auto', marginRight: '10px' }}
 //                     />
 //                   ))}
@@ -135,7 +135,7 @@
 //                     <img
 //                       key={index}
 //                       src={imageUrl} // Display image URL
-//                       alt={`Rejected Product Image ${index + 1}`}
+//                       alt={'Rejected Product Image ${index + 1}'}
 //                       style={{ width: '100px', height: 'auto', marginRight: '10px' }}
 //                     />
 //                   ))}
@@ -171,8 +171,8 @@
 
 //   const fetchApprovedProducts = async () => {
 //     try {
-//       const response = await axios.get('http://localhost:5000/api/product/admin/products/approved', {
-//         headers: { Authorization: `Bearer ${token}` },
+//       const response = await axios.get('${process.env.REACT_APP_SERVER_HOSTNAME}/api/product/admin/products/approved', {
+//         headers: { Authorization: 'Bearer ${token}' },
 //       });
 //       setApprovedProducts(response.data);
 //     } catch (err) {
@@ -183,8 +183,8 @@
 
 //   const fetchRejectedProducts = async () => {
 //     try {
-//       const response = await axios.get('http://localhost:5000/api/product/admin/products/rejected', {
-//         headers: { Authorization: `Bearer ${token}` },
+//       const response = await axios.get('${process.env.REACT_APP_SERVER_HOSTNAME}/api/product/admin/products/rejected', {
+//         headers: { Authorization: 'Bearer ${token}' },
 //       });
 //       setRejectedProducts(response.data);
 //     } catch (err) {
@@ -303,7 +303,7 @@
 //                       <img
 //                         key={index}
 //                         src={imageUrl}
-//                         alt={`Product Image ${index + 1}`}
+//                         alt={'Product Image ${index + 1}'}
 //                         style={{ width: '100px', height: 'auto', marginRight: '10px' }}
 //                         onClick={() => handleImageClick(imageUrl)}
 //                       />
@@ -345,7 +345,7 @@
 //                       <img
 //                         key={index}
 //                         src={imageUrl}
-//                         alt={`Rejected Product Image ${index + 1}`}
+//                         alt={'Rejected Product Image ${index + 1}'}
 //                         style={{ width: '100px', height: 'auto', marginRight: '10px' }}
 //                         onClick={() => handleImageClick(imageUrl)}
 //                       />
@@ -429,8 +429,8 @@ const ProductList = () => {
             try {
                 const endpoint =
                     tabValue === 'approved'
-                        ? 'http://localhost:5000/api/product/admin/products/approved'
-                        : 'http://localhost:5000/api/product/admin/products/rejected';
+                        ? `${process.env.REACT_APP_SERVER_HOSTNAME}/api/product/admin/products/approved`
+                        : `${process.env.REACT_APP_SERVER_HOSTNAME}/api/product/admin/products/rejected`;
 
                 const response = await axios.get(endpoint, {
                     headers: { Authorization: `Bearer ${token}` },
