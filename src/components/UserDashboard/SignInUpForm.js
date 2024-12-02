@@ -324,10 +324,10 @@ const SignInUpForm = () => {
           alert("Unauthorized role.");
         }
       } else {
-        alert('Sign-up error: ${response.data.error}');
+        alert(`Sign-up error: ${response.data.error}`);
       }
     } catch (error) {
-      alert('Network error: ${error.message}');
+      alert(`Network error: ${error.message}`);
     }
   };
   
@@ -459,11 +459,11 @@ const SignInUpForm = () => {
           alert('Login failed. No token received.');
         }
       } else {
-        alert('Sign-in error: ${response.data.error}');
+        alert(`Sign-in error: ${response.data.error}`);
       }
     } catch (error) {
       console.error("Error during login:", error.message);
-      alert('Network error: ${error.message}');
+      alert(`Network error: ${error.message}`);
     }
   };
   

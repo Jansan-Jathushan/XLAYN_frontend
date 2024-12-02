@@ -80,12 +80,12 @@ const AddProduct = ({ onClose }) => {
         }
       );
 
-      setStatusMessage('Product added successfully: ${response.data.name}');
+      setStatusMessage(`Product added successfully: ${response.data.name}`);
       setStatusType('success');
       setOpenSnackbar(true);
     } catch (err) {
       console.error('Error adding product:', err);
-      setStatusMessage('Error adding product: ${err.response?.data?.message || err.message}');
+      setStatusMessage(`Error adding product: ${err.response?.data?.message || err.message}`);
       setStatusType('error');
       setOpenSnackbar(true);
     } finally {
